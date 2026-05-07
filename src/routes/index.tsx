@@ -154,6 +154,11 @@ function Index() {
                 desc: "Abordajes integrales y articulados con el equipo tratante.",
               },
               {
+                icon: ClipboardList,
+                title: "Atención ambulatoria",
+                desc: "Contamos con consultorio propio para atención ambulatoria, entrevistas y seguimiento clínico.",
+              },
+              {
                 icon: Users,
                 title: "Consumos problemáticos",
                 desc: "Asistencia integral en situaciones de consumo problemático.",
