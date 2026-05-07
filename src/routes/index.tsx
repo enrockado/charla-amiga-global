@@ -154,6 +154,11 @@ function Index() {
                 desc: "Abordajes integrales y articulados con el equipo tratante.",
               },
               {
+                icon: ClipboardList,
+                title: "Atención ambulatoria",
+                desc: "Contamos con consultorio propio para atención ambulatoria, entrevistas y seguimiento clínico.",
+              },
+              {
                 icon: Users,
                 title: "Consumos problemáticos",
                 desc: "Asistencia integral en situaciones de consumo problemático.",
@@ -192,7 +197,7 @@ function Index() {
               Modalidad de atención
             </p>
             <h2 className="mt-3 text-3xl font-semibold tracking-tight md:text-4xl">
-              Atención domiciliaria con respaldo profesional
+              Atención domiciliaria y ambulatoria con respaldo profesional
             </h2>
             <ul className="mt-6 space-y-4 text-muted-foreground">
               <li className="flex gap-3">
@@ -205,7 +210,7 @@ function Index() {
               </li>
               <li className="flex gap-3">
                 <Stethoscope className="mt-1 h-5 w-5 flex-shrink-0 text-primary" />
-                <span><strong className="text-foreground">Consultorio de respaldo</strong> para entrevistas y coordinación.</span>
+                <span><strong className="text-foreground">Consultorio propio</strong> para atención ambulatoria, entrevistas y coordinación.</span>
               </li>
               <li className="flex gap-3">
                 <CheckCircle2 className="mt-1 h-5 w-5 flex-shrink-0 text-primary" />
