@@ -116,7 +116,7 @@ function Index() {
           <p className="mt-5 text-lg text-muted-foreground">
             Somos una asociación civil orientada a la atención en salud mental,
             discapacidad y problemáticas vinculadas a consumos y adicciones.
-            Brindamos prestaciones personalizadas, con enfoque clínico y
+            Brindamos prestaciones personalizadas, con enfoque clínico comunitario y
             acompañamiento continuo, articulando con profesionales y redes de atención.
           </p>
         </div>
