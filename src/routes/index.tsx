@@ -82,8 +82,9 @@ function Index() {
               <strong className="text-foreground">A.C.A.P.I.A</strong> — Asociación Civil para la Asistencia, Prevención, Investigación y Acompañamiento en Salud Mental y problemáticas asociadas.
             </p>
             <p className="mt-5 text-lg text-muted-foreground">
-              Acompañamiento Terapéutico (AT) y Psicoterapia con atención domiciliaria
-              y respaldo profesional en la Ciudad Autónoma de Buenos Aires.
+              Acompañamiento Terapéutico (AT) y Psicoterapia con atención
+              domiciliaria y ambulatoria en consultorio propio, con respaldo
+              profesional en la Ciudad Autónoma de Buenos Aires.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Button asChild size="lg" className="rounded-full shadow-[var(--shadow-soft)]">
