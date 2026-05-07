@@ -156,7 +156,7 @@ function Index() {
               {
                 icon: Users,
                 title: "Consumos problemáticos",
-                desc: "Apoyo en situaciones de consumo problemático.",
+                desc: "Asistencia integral en situaciones de consumo problemático.",
               },
               {
                 icon: ClipboardList,
