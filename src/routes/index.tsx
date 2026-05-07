@@ -78,6 +78,9 @@ function Index() {
                 Salud Mental y Discapacidad
               </span>
             </h1>
+            <p className="mt-3 text-sm text-muted-foreground">
+              <strong className="text-foreground">A.C.A.P.I.A</strong> — Asociación Civil para la Asistencia, Prevención, Investigación y Acompañamiento en Salud Mental y problemáticas asociadas.
+            </p>
             <p className="mt-5 text-lg text-muted-foreground">
               Acompañamiento Terapéutico (AT) y Psicoterapia con atención domiciliaria
               y respaldo profesional en la Ciudad Autónoma de Buenos Aires.
@@ -115,7 +118,7 @@ function Index() {
           </h2>
           <p className="mt-5 text-lg text-muted-foreground">
             Somos una asociación civil orientada a la atención en salud mental,
-            discapacidad y problemáticas vinculadas a consumos y adicciones.
+            discapacidad y problemáticas vinculadas a consumos.
             Brindamos prestaciones personalizadas, con enfoque clínico comunitario y
             acompañamiento continuo, articulando con profesionales y redes de atención.
           </p>
@@ -152,8 +155,8 @@ function Index() {
               },
               {
                 icon: Users,
-                title: "Consumos y adicciones",
-                desc: "Apoyo en situaciones de consumo problemático y adicciones.",
+                title: "Consumos problemáticos",
+                desc: "Apoyo en situaciones de consumo problemático.",
               },
               {
                 icon: ClipboardList,
