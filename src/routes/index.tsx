@@ -124,7 +124,7 @@ function Index() {
             acompañamiento continuo, articulando con profesionales y redes de atención.
           </p>
           <p className="mt-4 text-lg text-muted-foreground">
-            Promovemos además actividades de <strong className="text-foreground">investigación</strong>,
+            Promovemos además actividades de investigación,
             formación y desarrollo comunitario en salud mental.
           </p>
         </div>
