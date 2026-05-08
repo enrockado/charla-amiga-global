@@ -21,7 +21,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Asociación Civil fundada en 2013. Acompañamiento Terapéutico (AT) y Psicoterapia domiciliaria en CABA. Atención en salud mental y discapacidad.",
+          "Asociación Civil constituida en 2013. Acompañamiento Terapéutico (AT) y Psicoterapia en CABA. Atención en salud mental, discapacidad y consumos.",
       },
     ],
   }),
@@ -35,15 +35,15 @@ const EMAIL = "acapiaasociacioncivil@gmail.com";
 function Index() {
   return (
     <div className="min-h-screen bg-background text-foreground scroll-smooth">
-      {/* Header con Logo Gigante (h-80) y Z-Index reforzado */}
+      {/* Header con Logo escalado al 115% (h-92) */}
       <header className="sticky top-0 z-[100] border-b border-border/60 bg-background/95 backdrop-blur">
         <div className="mx-auto flex max-w-full items-center justify-between px-12 py-6">
           <a href="#top" className="flex items-center">
-            {/* Logo escalado a h-80 con prioridad de carga */}
+            {/* Logo con tamaño final incrementado */}
             <img 
               src={logoImg} 
               alt="ACAPIA" 
-              className="h-80 w-auto object-contain pointer-events-none" 
+              className="h-92 w-auto object-contain pointer-events-none" 
             />
           </a>
           
@@ -63,7 +63,7 @@ function Index() {
         </div>
       </header>
 
-      {/* Hero: Ajustado para que no quede debajo del logo gigante */}
+      {/* Hero */}
       <section id="top" className="relative pt-32">
         <div 
           className="absolute inset-0 -z-10 bg-cover bg-center opacity-30" 
@@ -78,7 +78,7 @@ function Index() {
               </span>
             </h1>
             <p className="mt-5 text-xl text-muted-foreground">
-              Acompañamiento Terapéutico (AT) y Psicoterapia domiciliaria y ambulatoria, con respaldo profesional en CABA.
+              Acompañamiento Terapéutico y Psicoterapia con atención domiciliaria y ambulatoria en la Ciudad Autónoma de Buenos Aires.
             </p>
             <div className="mt-8">
               <Button asChild size="lg" className="rounded-full px-10 py-7 text-xl h-auto">
@@ -92,60 +92,58 @@ function Index() {
         </div>
       </section>
 
-      {/* Nosotros: scroll-mt aumentado por el alto del logo */}
-      <section id="nosotros" className="scroll-mt-[400px] py-32 mx-auto max-w-6xl px-6">
+      {/* Nosotros con el texto solicitado */}
+      <section id="nosotros" className="scroll-mt-[450px] py-32 mx-auto max-w-6xl px-6">
         <div className="text-center">
-          <p className="text-sm font-medium uppercase tracking-wider text-primary mb-4">Desde 2013</p>
+          <p className="text-sm font-medium uppercase tracking-wider text-primary mb-4">Trayectoria</p>
           <h2 className="text-5xl font-black mb-8">Quiénes Somos</h2>
-          <p className="text-2xl text-muted-foreground leading-relaxed">
-            Somos una **Asociación Civil constituida en septiembre de 2013**, orientada a la 
-            atención en salud mental, discapacidad y problemáticas vinculadas a consumos. 
-            Brindamos prestaciones con enfoque clínico comunitario en la Ciudad Autónoma de Buenos Aires.
+          <p className="text-2xl text-muted-foreground leading-relaxed max-w-5xl mx-auto">
+            Somos una Asociación Civil constituida en el año 2013. Brindamos atención en salud mental, discapacidad y problemáticas vinculadas a consumos. Ofrecemos prestaciones personalizadas, con enfoque clínico comunitario y acompañamiento continuo, articulando con profesionales y redes de atención.
           </p>
         </div>
       </section>
 
       {/* Servicios */}
-      <section id="servicios" className="scroll-mt-[400px] bg-secondary/30 py-32">
+      <section id="servicios" className="scroll-mt-[450px] bg-secondary/30 py-32">
         <div className="mx-auto max-w-6xl px-6">
           <h2 className="text-5xl font-black text-center mb-20">Servicios</h2>
           <div className="grid gap-10 md:grid-cols-3">
             <div className="bg-card p-10 rounded-3xl border shadow-sm">
               <Home className="h-12 w-12 text-primary mb-6" />
               <h3 className="text-2xl font-bold mb-4">Acompañamiento</h3>
-              <p className="text-lg text-muted-foreground">AT domiciliario sostenido y planificado clínicamente.</p>
+              <p className="text-lg text-muted-foreground">AT domiciliario y ambulatorio planificado clínicamente.</p>
             </div>
             <div className="bg-card p-10 rounded-3xl border shadow-sm">
               <Heart className="h-12 w-12 text-primary mb-6" />
               <h3 className="text-2xl font-bold mb-4">Psicoterapia</h3>
-              <p className="text-lg text-muted-foreground">Espacios individuales adaptados a cada necesidad.</p>
+              <p className="text-lg text-muted-foreground">Espacios terapéuticos individuales adaptados a cada paciente.</p>
             </div>
             <div className="bg-card p-10 rounded-3xl border shadow-sm">
               <CheckCircle2 className="h-12 w-12 text-primary mb-6" />
               <h3 className="text-2xl font-bold mb-4">Obras Sociales</h3>
-              <p className="text-lg text-muted-foreground">Trabajamos con prestaciones en discapacidad.</p>
+              <p className="text-lg text-muted-foreground">Atención mediante prestaciones en discapacidad.</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* Modalidad */}
-      <section id="modalidad" className="scroll-mt-[400px] py-32 mx-auto max-w-6xl px-6">
+      <section id="modalidad" className="scroll-mt-[450px] py-32 mx-auto max-w-6xl px-6">
         <div className="grid md:grid-cols-2 gap-20 items-center">
           <h2 className="text-5xl font-black">Nuestra Modalidad</h2>
           <div className="space-y-6 text-xl text-muted-foreground">
-            <p>Entendemos el acompañamiento como un puente hacia la autonomía.</p>
+            <p>Trabajamos en el entorno habitual y social, coordinando con equipos tratantes y familias.</p>
             <ul className="space-y-4">
               <li className="flex gap-4 font-bold text-foreground">✓ Intervención Domiciliaria</li>
-              <li className="flex gap-4 font-bold text-foreground">✓ Abordaje Interdisciplinario</li>
-              <li className="flex gap-4 font-bold text-foreground">✓ Supervisión Clínica Constante</li>
+              <li className="flex gap-4 font-bold text-foreground">✓ Consultorio en CABA</li>
+              <li className="flex gap-4 font-bold text-foreground">✓ Supervisión Clínica Permanente</li>
             </ul>
           </div>
         </div>
       </section>
 
       {/* Proceso */}
-      <section id="proceso" className="scroll-mt-[400px] bg-primary text-primary-foreground py-40">
+      <section id="proceso" className="scroll-mt-[450px] bg-primary text-primary-foreground py-40">
         <div className="mx-auto max-w-6xl px-6 text-center">
           <h2 className="text-5xl font-black mb-20">Proceso de Ingreso</h2>
           <div className="grid md:grid-cols-3 gap-16">
@@ -157,19 +155,19 @@ function Index() {
             <div>
               <span className="text-7xl font-black opacity-20 block mb-4">02</span>
               <h3 className="text-3xl font-bold">Asignación</h3>
-              <p className="mt-4 text-xl opacity-90">Selección del equipo adecuado.</p>
+              <p className="mt-4 text-xl opacity-90">Selección del equipo profesional.</p>
             </div>
             <div>
               <span className="text-7xl font-black opacity-20 block mb-4">03</span>
-              <h3 className="text-3xl font-bold">Seguimiento</h3>
-              <p className="mt-4 text-xl opacity-90">Inicio del plan con informes periódicos.</p>
+              <h3 className="text-3xl font-bold">Inicio</h3>
+              <p className="mt-4 text-xl opacity-90">Seguimiento clínico continuo.</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* Contacto */}
-      <section id="contacto" className="scroll-mt-[400px] py-40 mx-auto max-w-6xl px-6">
+      <section id="contacto" className="scroll-mt-[450px] py-40 mx-auto max-w-6xl px-6">
         <div className="grid md:grid-cols-2 gap-20">
           <div className="space-y-12">
             <h2 className="text-6xl font-black">Contacto</h2>
