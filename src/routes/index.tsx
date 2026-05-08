@@ -59,17 +59,17 @@ const HeroSvg = () => (
 function Index() {
   return (
     <div className="min-h-screen bg-background text-foreground scroll-smooth">
-      {/* Header: Logo reducido 15% con contenedor de recorte limpio */}
+      {/* Header: Logo aumentado un 20% y totalmente visible */}
       <header className="sticky top-0 z-[100] border-b border-border/60 bg-background/95 backdrop-blur">
         <div className="mx-auto flex max-w-full items-center justify-between px-12 py-3">
           <a href="#top" className="flex items-center">
-            {/* Contenedor que oculta las palabras inferiores deslizando la imagen */}
-            <div className="overflow-hidden h-[85px] w-[95px] flex items-start justify-center">
+            {/* Contenedor ajustado para el aumento del 20% */}
+            <div className="h-[102px] w-[114px] flex items-center justify-center">
               <img 
                 src={logoImg} 
                 alt="ACAPIA" 
-                className="h-[110px] w-auto max-w-none pointer-events-none"
-                style={{ marginTop: "-2px" }} // Ajuste fino para centrar el icono y nombre
+                className="h-[132px] w-auto max-w-none pointer-events-none"
+                style={{ marginTop: "-2px" }} // Ajuste fino
               />
             </div>
           </a>
@@ -152,7 +152,7 @@ function Index() {
       <section id="modalidad" className="scroll-mt-[100px] py-32 mx-auto max-w-6xl px-6">
         <div className="grid md:grid-cols-2 gap-20 items-center">
           <h2 className="text-5xl font-extrabold text-slate-900 tracking-tight">Nuestra Modalidad</h2>
-          <div className="space-y-6 text-xl text-slate-500 font-light">
+          <div className="space-y-6 text-xl text-muted-foreground font-light">
             <p>Sostenemos una práctica basada en la articulación constante con familias y equipos tratantes.</p>
             <ul className="space-y-4 font-bold text-slate-800 italic">
               <li>✓ Intervención Domiciliaria</li>
