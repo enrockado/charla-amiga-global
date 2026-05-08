@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import logoImg from "@/assets/logo.png";
+import logoImg from "@/assets/logo.png"; // Usa el archivo que subiste sin las letras al pie
 import { Button } from "@/components/ui/button";
 import React from "react";
 import {
@@ -31,6 +31,25 @@ const WHATSAPP = "541137914461";
 const WHATSAPP_DISPLAY = "011 3791-4461";
 const EMAIL = "acapiaasociacioncivil@gmail.com";
 
+// Imagen original restaurada: Acompañamos, Incluimos, Transformamos
+const HeroSvg = () => (
+  <svg width="380" height="320" viewBox="0 0 380 320" xmlns="http://www.w3.org/2000/svg" className="w-full h-auto max-w-[450px] drop-shadow-xl">
+    <rect width="380" height="320" rx="24" fill="#f0eef8"/>
+    <line x1="60" y1="40" x2="60" y2="280" stroke="#1e2d6b" strokeWidth="2.5" opacity="0.15" strokeLinecap="round"/>
+    <circle cx="60" cy="90" r="9" fill="#1e2d6b" opacity="0.25"/>
+    <circle cx="60" cy="90" r="4" fill="#1e2d6b" opacity="0.5"/>
+    <text x="86" y="84" fontFamily="Inter, sans-serif" fontSize="10" fontWeight="300" fill="#1e2d6b" opacity="0.45" letterSpacing="3">ACOMPAÑAMOS</text>
+    <line x1="86" y1="96" x2="260" y2="96" stroke="#1e2d6b" strokeWidth="0.6" opacity="0.1"/>
+    <circle cx="60" cy="165" r="11" fill="#e87c2e" opacity="0.18"/>
+    <circle cx="60" cy="165" r="5" fill="#e87c2e" opacity="0.45"/>
+    <text x="86" y="171" fontFamily="Inter, sans-serif" fontSize="22" fontWeight="600" fill="#1e2d6b" opacity="0.72">Incluimos</text>
+    <line x1="86" y1="183" x2="290" y2="183" stroke="#e87c2e" strokeWidth="1" opacity="0.2"/>
+    <circle cx="60" cy="242" r="9" fill="#1e2d6b" opacity="0.2"/>
+    <circle cx="60" cy="242" r="4" fill="#e87c2e" opacity="0.55"/>
+    <text x="86" y="236" fontFamily="Inter, sans-serif" fontSize="10" fontWeight="300" fill="#e87c2e" opacity="0.6" letterSpacing="3">TRANSFORMAMOS</text>
+  </svg>
+);
+
 function Index() {
   return (
     <div className="min-h-screen bg-white text-foreground scroll-smooth font-sans">
@@ -38,18 +57,18 @@ function Index() {
       <header className="sticky top-0 z-[100] border-b border-slate-200/60 bg-[#f8f9ff] shadow-sm">
         <div className="mx-auto flex max-w-full items-center justify-between px-20 py-4">
           
-          {/* Logo: 15% más grande, sin recortes y centrado hacia el interior */}
+          {/* Logo: SIN las 3 palabras debajo, 15% más grande y sin recortes */}
           <div className="flex items-center">
             <a href="#top" className="block ml-10">
               <img 
                 src={logoImg} 
                 alt="ACAPIA" 
-                className="h-[175px] w-auto object-contain pointer-events-none"
+                className="h-[200px] w-auto object-contain pointer-events-none"
               />
             </a>
           </div>
           
-          {/* Navegación: Presencia fuerte, tamaño grande y grosor negrita */}
+          {/* Navegación: Presencia fuerte y grosor negrita */}
           <nav className="hidden gap-14 text-xl font-bold text-slate-800 md:flex">
             <a href="#nosotros" className="hover:text-primary transition-colors tracking-tight">Nosotros</a>
             <a href="#servicios" className="hover:text-primary transition-colors tracking-tight">Servicios</a>
@@ -69,7 +88,7 @@ function Index() {
         </div>
       </header>
 
-      {/* Hero: Texto central editado sin ubicación específica */}
+      {/* Hero */}
       <section id="top" className="relative pt-12">
         <div className="mx-auto grid max-w-6xl items-center gap-20 px-6 py-20 md:grid-cols-2">
           <div>
@@ -91,16 +110,8 @@ function Index() {
             </div>
           </div>
           
-          {/* Módulo visual Hero */}
           <div className="flex justify-center">
-            <div className="w-full h-auto max-w-[450px] bg-slate-50 rounded-3xl p-10 shadow-inner border border-slate-100">
-              <div className="space-y-6">
-                <div className="h-2 w-20 bg-primary/20 rounded" />
-                <div className="h-10 w-full bg-white rounded-xl shadow-sm flex items-center px-4 text-slate-400 font-medium">Acompañamos</div>
-                <div className="h-10 w-full bg-white rounded-xl shadow-sm border-l-4 border-primary flex items-center px-4 text-primary font-bold">Incluimos</div>
-                <div className="h-10 w-full bg-white rounded-xl shadow-sm flex items-center px-4 text-slate-400 font-medium">Transformamos</div>
-              </div>
-            </div>
+            <HeroSvg />
           </div>
         </div>
       </section>
@@ -220,18 +231,10 @@ function Index() {
                 Enviar Mensaje
               </a>
             </Button>
-            <p className="mt-6 text-slate-400 font-medium">Atención de Lunes a Viernes</p>
           </div>
         </div>
       </section>
 
-      {/* Footer */}
       <footer className="border-t py-20 text-center bg-slate-50 text-slate-400">
         <p className="text-2xl font-bold text-slate-900 mb-2">© 2013 ACAPIA</p>
-        <p className="uppercase tracking-[0.15em] text-xs font-medium max-w-3xl mx-auto px-6 italic leading-relaxed">
-          Asociación Civil para la Asistencia, Prevención, Investigación y Acompañamiento en Salud Mental
-        </p>
-      </footer>
-    </div>
-  );
-}
+        <p className="uppercase tracking-
