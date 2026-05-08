@@ -45,17 +45,17 @@ function Index() {
       <header className="sticky top-0 z-40 border-b border-border/60 bg-background/80 backdrop-blur">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
           <a href="#top" className="flex items-center gap-2.5">
-  <img src={logoImg} alt="ACAPIA" className="h-48 w-48 object-contain" />
-<span className="text-6xl font-bold tracking-tight text-primary">acapia</span>
+  <img src={logoImg} alt="ACAPIA" className="h-80 w-80 object-contain" />
+<span className="text-9xl font-bold tracking-tight text-primary">acapia</span>
 </a>
           <nav className="hidden gap-7 text-sm text-muted-foreground md:flex">
-            <a href="#nosotros" className="hover:text-foreground">Nosotros</a>
+            <a href="#nosotros" className="hidden gap-16 text-5xl font-black text-foreground md:flex">
             <a href="#servicios" className="hover:text-foreground">Servicios</a>
             <a href="#modalidad" className="hover:text-foreground">Modalidad</a>
             <a href="#proceso" className="hover:text-foreground">Proceso</a>
             <a href="#contacto" className="hover:text-foreground">Contacto</a>
           </nav>
-          <Button asChild size="sm" className="rounded-full">
+         <Button asChild className="rounded-full text-4xl font-black px-12 py-16 h-auto">
             <a href={`https://wa.me/${WHATSAPP}`} target="_blank" rel="noreferrer">
               WhatsApp
             </a>
