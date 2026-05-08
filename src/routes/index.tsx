@@ -17,11 +17,11 @@ import {
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Salud Mental y Discapacidad en CABA" },
+      { title: "ACAPIA | Salud Mental y Discapacidad en CABA" },
       {
         name: "description",
         content:
-          "Asociación Civil constituida en 2013. Acompañamiento Terapéutico (AT) y Psicoterapia en CABA. Atención en salud mental, discapacidad y consumos.",
+          "Asociación Civil constituida en 2013. Acompañamiento Terapéutico (AT) y Psicoterapia personalizada en CABA. Especialistas en salud mental, discapacidad y consumos problemáticos.",
       },
     ],
   }),
@@ -87,14 +87,14 @@ function Index() {
               </Button>
             </div>
           </div>
-          <img src={heroImg} className="rounded-3xl shadow-2xl" alt="Atención" />
+          <img src={heroImg} className="rounded-3xl shadow-2xl" alt="Atención en Salud Mental" />
         </div>
       </section>
 
-      {/* Nosotros */}
+      {/* Nosotros: Texto Exacto Solicitado */}
       <section id="nosotros" className="scroll-mt-[450px] py-32 mx-auto max-w-6xl px-6">
         <div className="text-center">
-          <p className="text-sm font-medium uppercase tracking-wider text-primary mb-4">Trayectoria</p>
+          <p className="text-sm font-medium uppercase tracking-wider text-primary mb-4">Desde 2013</p>
           <h2 className="text-5xl font-black mb-8">Quiénes Somos</h2>
           <p className="text-2xl text-muted-foreground leading-relaxed max-w-5xl mx-auto">
             Somos una Asociación Civil constituida en el año 2013. Brindamos atención en salud mental, discapacidad y problemáticas vinculadas a consumos. Ofrecemos prestaciones personalizadas, con enfoque clínico comunitario y acompañamiento continuo, articulando con profesionales y redes de atención.
@@ -110,17 +110,17 @@ function Index() {
             <div className="bg-card p-10 rounded-3xl border shadow-sm">
               <Home className="h-12 w-12 text-primary mb-6" />
               <h3 className="text-2xl font-bold mb-4">Acompañamiento</h3>
-              <p className="text-lg text-muted-foreground">AT domiciliario y ambulatorio planificado clínicamente.</p>
+              <p className="text-lg text-muted-foreground">AT domiciliario y ambulatorio planificado bajo seguimiento clínico.</p>
             </div>
             <div className="bg-card p-10 rounded-3xl border shadow-sm">
               <Heart className="h-12 w-12 text-primary mb-6" />
               <h3 className="text-2xl font-bold mb-4">Psicoterapia</h3>
-              <p className="text-lg text-muted-foreground">Espacios terapéuticos individuales adaptados a cada paciente.</p>
+              <p className="text-lg text-muted-foreground">Abordajes individuales adaptados a las necesidades de cada paciente.</p>
             </div>
             <div className="bg-card p-10 rounded-3xl border shadow-sm">
               <CheckCircle2 className="h-12 w-12 text-primary mb-6" />
               <h3 className="text-2xl font-bold mb-4">Obras Sociales</h3>
-              <p className="text-lg text-muted-foreground">Atención mediante prestaciones en discapacidad.</p>
+              <p className="text-lg text-muted-foreground">Gestión de atención mediante prestaciones en discapacidad.</p>
             </div>
           </div>
         </div>
@@ -131,10 +131,10 @@ function Index() {
         <div className="grid md:grid-cols-2 gap-20 items-center">
           <h2 className="text-5xl font-black">Nuestra Modalidad</h2>
           <div className="space-y-6 text-xl text-muted-foreground">
-            <p>Trabajamos en el entorno habitual y social, coordinando con equipos tratantes y familias.</p>
+            <p>Sostenemos una práctica basada en la articulación constante con familias y equipos tratantes.</p>
             <ul className="space-y-4">
               <li className="flex gap-4 font-bold text-foreground">✓ Intervención Domiciliaria</li>
-              <li className="flex gap-4 font-bold text-foreground">✓ Consultorio en CABA</li>
+              <li className="flex gap-4 font-bold text-foreground">✓ Abordaje Interdisciplinario</li>
               <li className="flex gap-4 font-bold text-foreground">✓ Supervisión Clínica Permanente</li>
             </ul>
           </div>
@@ -149,17 +149,17 @@ function Index() {
             <div>
               <span className="text-7xl font-black opacity-20 block mb-4">01</span>
               <h3 className="text-3xl font-bold">Admisión</h3>
-              <p className="mt-4 text-xl opacity-90">Entrevista inicial de evaluación.</p>
+              <p className="mt-4 text-xl opacity-90">Evaluación inicial del caso y necesidades.</p>
             </div>
             <div>
               <span className="text-7xl font-black opacity-20 block mb-4">02</span>
               <h3 className="text-3xl font-bold">Asignación</h3>
-              <p className="mt-4 text-xl opacity-90">Selección del equipo profesional.</p>
+              <p className="mt-4 text-xl opacity-90">Selección del profesional o equipo idóneo.</p>
             </div>
             <div>
               <span className="text-7xl font-black opacity-20 block mb-4">03</span>
-              <h3 className="text-3xl font-bold">Inicio</h3>
-              <p className="mt-4 text-xl opacity-90">Seguimiento clínico continuo.</p>
+              <h3 className="text-3xl font-bold">Seguimiento</h3>
+              <p className="mt-4 text-xl opacity-90">Monitoreo constante del proceso terapéutico.</p>
             </div>
           </div>
         </div>
@@ -186,32 +186,3 @@ function Index() {
                 </div>
               </div>
               <div className="flex items-center gap-6">
-                <MapPin className="text-primary h-10 w-10" />
-                <div className="flex flex-col">
-                  <span className="text-sm font-bold uppercase text-muted-foreground tracking-widest">Zona</span>
-                  <span className="text-2xl font-bold">CABA y GBA</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="bg-card border-4 border-primary p-12 rounded-[40px] text-center shadow-2xl">
-            <h3 className="text-3xl font-black mb-8">Solicitá una entrevista</h3>
-            <Button asChild className="w-full rounded-full py-10 text-3xl font-black h-auto">
-              <a href={`https://wa.me/${WHATSAPP}`} target="_blank" rel="noreferrer">
-                WhatsApp
-              </a>
-            </Button>
-          </div>
-        </div>
-      </section>
-
-      {/* Footer actualizado con año de fundación y texto exacto solicitado */}
-      <footer className="border-t py-20 text-center text-muted-foreground bg-secondary/10">
-        <p className="text-2xl font-bold">© 2013 ACAPIA</p>
-        <p className="mt-2 uppercase tracking-[0.1em] text-sm italic max-w-3xl mx-auto px-6 leading-relaxed">
-          Asociación Civil para la Asistencia, Prevención, Investigación y Acompañamiento en Salud Mental y problemáticas asociadas
-        </p>
-      </footer>
-    </div>
-  );
-}
