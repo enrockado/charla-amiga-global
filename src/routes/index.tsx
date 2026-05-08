@@ -44,24 +44,23 @@ const HeroSvg = () => (
 
 function Index() {
   return (
-    <div className="min-h-screen bg-background text-foreground scroll-smooth">
-      {/* Header Ajustado para Mayor Armonía y Presencia */}
-      <header className="sticky top-0 z-[100] border-b border-border/60 bg-background/95 backdrop-blur">
-        <div className="mx-auto flex max-w-full items-center justify-between px-10 py-6">
+    <div className="min-h-screen bg-white text-foreground scroll-smooth">
+      {/* Módulo Superior Fijo con Tono Suave de Contraste */}
+      <header className="sticky top-0 z-[100] border-b border-slate-200/60 bg-[#f8f9ff] shadow-sm">
+        <div className="mx-auto flex max-w-full items-center justify-between px-10 py-5">
           
-          {/* Logo: +5% tamaño y más hacia el centro */}
-          <a href="#top" className="flex items-center ml-8">
-            <div className="overflow-hidden h-[95px] w-[130px] flex items-start justify-center">
+          {/* Logo: Centrado, sin recortes y tamaño aumentado */}
+          <div className="flex-1 flex justify-start pl-4">
+            <a href="#top" className="block">
               <img 
                 src={logoImg} 
                 alt="ACAPIA" 
-                className="h-[125px] w-auto max-w-none pointer-events-none"
-                style={{ marginTop: "-5px" }} 
+                className="h-[135px] w-auto pointer-events-none object-contain"
               />
-            </div>
-          </a>
+            </a>
+          </div>
           
-          {/* Navegación: Más presencia, tamaño y grosor */}
+          {/* Navegación Central: Gran presencia y grosor */}
           <nav className="hidden gap-12 text-xl font-bold text-slate-800 md:flex">
             <a href="#nosotros" className="hover:text-primary transition-colors tracking-tight">Nosotros</a>
             <a href="#servicios" className="hover:text-primary transition-colors tracking-tight">Servicios</a>
@@ -70,8 +69,8 @@ function Index() {
             <a href="#contacto" className="hover:text-primary transition-colors tracking-tight">Contacto</a>
           </nav>
 
-          {/* Botón WhatsApp: Más hacia el centro */}
-          <div className="mr-8">
+          {/* Botón WhatsApp: Centrado a la derecha */}
+          <div className="flex-1 flex justify-end pr-4">
             <Button asChild className="rounded-full text-lg font-bold px-10 py-7 h-auto shadow-md">
               <a href={`https://wa.me/${WHATSAPP}`} target="_blank" rel="noreferrer">
                 WhatsApp
@@ -82,7 +81,7 @@ function Index() {
       </header>
 
       {/* Hero */}
-      <section id="top" className="relative pt-20">
+      <section id="top" className="relative pt-12">
         <div className="mx-auto grid max-w-6xl items-center gap-20 px-6 py-20 md:grid-cols-2">
           <div>
             <h1 className="text-4xl font-semibold leading-tight md:text-5xl text-slate-900">
@@ -119,7 +118,27 @@ function Index() {
         </div>
       </section>
 
-      {/* Otros componentes simplificados para el código completo... */}
+      {/* Servicios */}
+      <section id="servicios" className="scroll-mt-[150px] bg-secondary/10 py-32">
+        <div className="mx-auto max-w-6xl px-6 text-center">
+          <h2 className="text-5xl font-bold text-slate-900 mb-20 tracking-tight">Servicios</h2>
+          <div className="grid gap-10 md:grid-cols-3">
+             {[
+              { title: "Acompañamiento", icon: <Home className="h-10 w-10" />, desc: "AT domiciliario y ambulatorio planificado bajo seguimiento clínico." },
+              { title: "Psicoterapia", icon: <Heart className="h-10 w-10" />, desc: "Abordajes individuales adaptados a las necesidades de cada paciente." },
+              { title: "Obras Sociales", icon: <CheckCircle2 className="h-10 w-10" />, desc: "Gestión de atención mediante prestaciones en discapacidad." }
+            ].map((s, i) => (
+              <div key={i} className="bg-white p-10 rounded-[32px] border border-slate-100 shadow-sm">
+                <div className="text-primary mb-6 flex justify-center">{s.icon}</div>
+                <h3 className="text-2xl font-bold mb-4 text-slate-800">{s.title}</h3>
+                <p className="text-lg text-slate-500 font-light">{s.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Contacto */}
       <section id="contacto" className="scroll-mt-[150px] py-40 mx-auto max-w-6xl px-6">
         <div className="bg-white border-[3px] border-primary p-12 rounded-[48px] text-center shadow-xl max-w-2xl mx-auto">
           <h3 className="text-3xl font-bold mb-8 text-slate-900">Solicitá una entrevista</h3>
