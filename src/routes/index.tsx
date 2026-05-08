@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import logoImg from "@/assets/logo.png";
 import { Button } from "@/components/ui/button";
+import React from "react";
 import {
   Heart,
   Home,
@@ -28,7 +29,6 @@ const WHATSAPP = "541137914461";
 const WHATSAPP_DISPLAY = "011 3791-4461";
 const EMAIL = "acapiaasociacioncivil@gmail.com";
 
-// Componente de la nueva imagen SVG sustituyendo a la anterior
 const HeroSvg = () => (
   <svg width="380" height="320" viewBox="0 0 380 320" xmlns="http://www.w3.org/2000/svg" className="w-full h-auto max-w-[450px] drop-shadow-xl">
     <rect width="380" height="320" rx="24" fill="#f0eef8"/>
@@ -59,18 +59,19 @@ const HeroSvg = () => (
 function Index() {
   return (
     <div className="min-h-screen bg-background text-foreground scroll-smooth">
-      {/* Header con Logo Gigante (h-92) */}
+      {/* Header: Logo reducido con recorte preciso */}
       <header className="sticky top-0 z-[100] border-b border-border/60 bg-background/95 backdrop-blur">
-        <div className="mx-auto flex max-w-full items-center justify-between px-12 py-6">
-          <a href="#top" className="flex items-center">
+        <div className="mx-auto flex max-w-full items-center justify-between px-12 py-3">
+          <a href="#top" className="flex items-center overflow-hidden h-[120px]">
             <img 
               src={logoImg} 
               alt="ACAPIA" 
-              className="h-92 w-auto object-contain pointer-events-none" 
+              className="h-[170px] w-auto object-contain object-top pointer-events-none -translate-y-2"
+              style={{ clipPath: 'inset(0 0 17% 0)' }}
             />
           </a>
           
-          <nav className="hidden gap-14 text-3xl font-black text-foreground md:flex">
+          <nav className="hidden gap-10 text-xl font-semibold text-slate-700 md:flex">
             <a href="#nosotros" className="hover:text-primary transition-colors">Nosotros</a>
             <a href="#servicios" className="hover:text-primary transition-colors">Servicios</a>
             <a href="#modalidad" className="hover:text-primary transition-colors">Modalidad</a>
@@ -78,7 +79,7 @@ function Index() {
             <a href="#contacto" className="hover:text-primary transition-colors">Contacto</a>
           </nav>
 
-          <Button asChild className="rounded-full text-2xl font-black px-12 py-8 h-auto">
+          <Button asChild className="rounded-full text-lg font-bold px-10 py-6 h-auto">
             <a href={`https://wa.me/${WHATSAPP}`} target="_blank" rel="noreferrer">
               WhatsApp
             </a>
@@ -87,20 +88,20 @@ function Index() {
       </header>
 
       {/* Hero */}
-      <section id="top" className="relative pt-32">
+      <section id="top" className="relative pt-24">
         <div className="mx-auto grid max-w-6xl items-center gap-20 px-6 py-20 md:grid-cols-2">
           <div>
-            <h1 className="text-4xl font-semibold leading-tight md:text-5xl">
+            <h1 className="text-4xl font-semibold leading-tight md:text-5xl text-slate-900">
               Atención en{" "}
               <span className="bg-[image:var(--gradient-primary)] bg-clip-text text-transparent font-bold">
-                Salud Mental y Discapacidad
+                Salud Mental <span className="font-normal opacity-80 text-[0.9em]">y Discapacidad</span>
               </span>
             </h1>
-            <p className="mt-5 text-xl text-muted-foreground">
+            <p className="mt-5 text-xl text-slate-500 font-light leading-relaxed">
               Acompañamiento Terapéutico y Psicoterapia con atención domiciliaria y ambulatoria en la Ciudad Autónoma de Buenos Aires.
             </p>
             <div className="mt-8">
-              <Button asChild size="lg" className="rounded-full px-10 py-7 text-xl h-auto">
+              <Button asChild size="lg" className="rounded-full px-10 py-7 text-xl h-auto font-bold shadow-md hover:-translate-y-1 transition-transform">
                 <a href={`https://wa.me/${WHATSAPP}`} target="_blank" rel="noreferrer">
                   Contactar ahora
                 </a>
@@ -114,111 +115,103 @@ function Index() {
       </section>
 
       {/* Nosotros */}
-      <section id="nosotros" className="scroll-mt-[450px] py-32 mx-auto max-w-6xl px-6">
+      <section id="nosotros" className="scroll-mt-[350px] py-32 mx-auto max-w-6xl px-6">
         <div className="text-center">
-          <p className="text-sm font-medium uppercase tracking-wider text-primary mb-4">Desde 2013</p>
-          <h2 className="text-5xl font-black mb-8">Quiénes Somos</h2>
-          <p className="text-2xl text-muted-foreground leading-relaxed max-w-5xl mx-auto">
+          <p className="text-sm font-bold uppercase tracking-widest text-primary/70 mb-4">Desde 2013</p>
+          <h2 className="text-5xl font-extrabold text-slate-900 mb-8 tracking-tight">Quiénes Somos</h2>
+          <p className="text-2xl text-slate-500 leading-relaxed max-w-5xl mx-auto font-light">
             Somos una Asociación Civil constituida en el año 2013. Brindamos atención en salud mental, discapacidad y problemáticas vinculadas a consumos. Ofrecemos prestaciones personalizadas, con enfoque clínico comunitario y acompañamiento continuo, articulando con profesionales y redes de atención.
           </p>
         </div>
       </section>
 
       {/* Servicios */}
-      <section id="servicios" className="scroll-mt-[450px] bg-secondary/30 py-32">
+      <section id="servicios" className="scroll-mt-[350px] bg-secondary/20 py-32">
         <div className="mx-auto max-w-6xl px-6">
-          <h2 className="text-5xl font-black text-center mb-20">Servicios</h2>
+          <h2 className="text-5xl font-extrabold text-center text-slate-900 mb-20 tracking-tight">Servicios</h2>
           <div className="grid gap-10 md:grid-cols-3">
-            <div className="bg-card p-10 rounded-3xl border shadow-sm">
-              <Home className="h-12 w-12 text-primary mb-6" />
-              <h3 className="text-2xl font-bold mb-4">Acompañamiento</h3>
-              <p className="text-lg text-muted-foreground">AT domiciliario y ambulatorio planificado bajo seguimiento clínico.</p>
-            </div>
-            <div className="bg-card p-10 rounded-3xl border shadow-sm">
-              <Heart className="h-12 w-12 text-primary mb-6" />
-              <h3 className="text-2xl font-bold mb-4">Psicoterapia</h3>
-              <p className="text-lg text-muted-foreground">Abordajes individuales adaptados a las necesidades de cada paciente.</p>
-            </div>
-            <div className="bg-card p-10 rounded-3xl border shadow-sm">
-              <CheckCircle2 className="h-12 w-12 text-primary mb-6" />
-              <h3 className="text-2xl font-bold mb-4">Obras Sociales</h3>
-              <p className="text-lg text-muted-foreground">Gestión de atención mediante prestaciones en discapacidad.</p>
-            </div>
+            {[
+              { title: "Acompañamiento", icon: <Home className="h-10 w-10" />, desc: "AT domiciliario y ambulatorio planificado bajo seguimiento clínico." },
+              { title: "Psicoterapia", icon: <Heart className="h-10 w-10" />, desc: "Abordajes individuales adaptados a las necesidades de cada paciente." },
+              { title: "Obras Sociales", icon: <CheckCircle2 className="h-10 w-10" />, desc: "Gestión de atención mediante prestaciones en discapacidad." }
+            ].map((s, i) => (
+              <div key={i} className="bg-card p-10 rounded-[32px] border border-slate-100 shadow-sm hover:shadow-md transition-shadow">
+                <div className="text-primary mb-6">{s.icon}</div>
+                <h3 className="text-2xl font-bold mb-4 text-slate-800">{s.title}</h3>
+                <p className="text-lg text-slate-500 font-light leading-snug">{s.desc}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* Modalidad */}
-      <section id="modalidad" className="scroll-mt-[450px] py-32 mx-auto max-w-6xl px-6">
+      <section id="modalidad" className="scroll-mt-[350px] py-32 mx-auto max-w-6xl px-6">
         <div className="grid md:grid-cols-2 gap-20 items-center">
-          <h2 className="text-5xl font-black">Nuestra Modalidad</h2>
-          <div className="space-y-6 text-xl text-muted-foreground">
+          <h2 className="text-5xl font-extrabold text-slate-900 tracking-tight">Nuestra Modalidad</h2>
+          <div className="space-y-6 text-xl text-slate-500 font-light">
             <p>Sostenemos una práctica basada en la articulación constante con familias y equipos tratantes.</p>
-            <ul className="space-y-4">
-              <li className="flex gap-4 font-bold text-foreground">✓ Intervención Domiciliaria</li>
-              <li className="flex gap-4 font-bold text-foreground">✓ Abordaje Interdisciplinario</li>
-              <li className="flex gap-4 font-bold text-foreground">✓ Supervisión Clínica Permanente</li>
+            <ul className="space-y-4 font-bold text-slate-800 italic">
+              <li>✓ Intervención Domiciliaria</li>
+              <li>✓ Abordaje Interdisciplinario</li>
+              <li>✓ Supervisión Clínica Permanente</li>
             </ul>
           </div>
         </div>
       </section>
 
       {/* Proceso */}
-      <section id="proceso" className="scroll-mt-[450px] bg-primary text-primary-foreground py-40">
+      <section id="proceso" className="scroll-mt-[350px] bg-primary text-white py-40">
         <div className="mx-auto max-w-6xl px-6 text-center">
-          <h2 className="text-5xl font-black mb-20">Proceso de Ingreso</h2>
+          <h2 className="text-5xl font-extrabold mb-20 tracking-tight">Proceso de Ingreso</h2>
           <div className="grid md:grid-cols-3 gap-16">
-            <div>
-              <span className="text-7xl font-black opacity-20 block mb-4">01</span>
-              <h3 className="text-3xl font-bold">Admisión</h3>
-              <p className="mt-4 text-xl opacity-90">Evaluación inicial del caso y necesidades.</p>
-            </div>
-            <div>
-              <span className="text-7xl font-black opacity-20 block mb-4">02</span>
-              <h3 className="text-3xl font-bold">Asignación</h3>
-              <p className="mt-4 text-xl opacity-90">Selección del profesional o equipo idóneo.</p>
-            </div>
-            <div>
-              <span className="text-7xl font-black opacity-20 block mb-4">03</span>
-              <h3 className="text-3xl font-bold">Seguimiento</h3>
-              <p className="mt-4 text-xl opacity-90">Monitoreo constante del proceso terapéutico.</p>
-            </div>
+            {[
+              { num: "01", t: "Admisión", d: "Evaluación inicial del caso y necesidades." },
+              { num: "02", t: "Asignación", d: "Selección del profesional o equipo idóneo." },
+              { num: "03", t: "Seguimiento", d: "Monitoreo constante del proceso terapéutico." }
+            ].map((p, i) => (
+              <div key={i}>
+                <span className="text-7xl font-extrabold opacity-20 block mb-4">{p.num}</span>
+                <h3 className="text-2xl font-bold mb-2">{p.t}</h3>
+                <p className="text-lg opacity-90 font-light">{p.d}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* Contacto */}
-      <section id="contacto" className="scroll-mt-[450px] py-40 mx-auto max-w-6xl px-6">
+      <section id="contacto" className="scroll-mt-[350px] py-40 mx-auto max-w-6xl px-6">
         <div className="grid md:grid-cols-2 gap-20">
           <div className="space-y-12">
-            <h2 className="text-6xl font-black">Contacto</h2>
+            <h2 className="text-6xl font-extrabold text-slate-900 tracking-tighter">Contacto</h2>
             <div className="space-y-8">
               <div className="flex items-center gap-6">
-                <Mail className="text-primary h-10 w-10" />
+                <Mail className="text-primary h-8 w-8" />
                 <div className="flex flex-col">
-                  <span className="text-sm font-bold uppercase text-muted-foreground tracking-widest">Email</span>
-                  <a href={`mailto:${EMAIL}`} className="text-2xl hover:underline font-bold">{EMAIL}</a>
+                  <span className="text-xs font-bold uppercase text-slate-400 tracking-[0.2em]">Email</span>
+                  <a href={`mailto:${EMAIL}`} className="text-2xl hover:text-primary font-bold text-slate-800 transition-colors">{EMAIL}</a>
                 </div>
               </div>
               <div className="flex items-center gap-6">
-                <Phone className="text-primary h-10 w-10" />
+                <Phone className="text-primary h-8 w-8" />
                 <div className="flex flex-col">
-                  <span className="text-sm font-bold uppercase text-muted-foreground tracking-widest">WhatsApp</span>
-                  <span className="text-3xl font-black">{WHATSAPP_DISPLAY}</span>
+                  <span className="text-xs font-bold uppercase text-slate-400 tracking-[0.2em]">WhatsApp</span>
+                  <span className="text-3xl font-extrabold text-slate-900">{WHATSAPP_DISPLAY}</span>
                 </div>
               </div>
               <div className="flex items-center gap-6">
-                <MapPin className="text-primary h-10 w-10" />
+                <MapPin className="text-primary h-8 w-8" />
                 <div className="flex flex-col">
-                  <span className="text-sm font-bold uppercase text-muted-foreground tracking-widest">Zona de Atención</span>
-                  <span className="text-2xl font-bold">CABA y GBA</span>
+                  <span className="text-xs font-bold uppercase text-slate-400 tracking-[0.2em]">Zona de Atención</span>
+                  <span className="text-2xl font-bold text-slate-800">CABA y GBA</span>
                 </div>
               </div>
             </div>
           </div>
-          <div className="bg-card border-4 border-primary p-12 rounded-[40px] text-center shadow-2xl">
-            <h3 className="text-3xl font-black mb-8">Solicitá una entrevista</h3>
-            <Button asChild className="w-full rounded-full py-10 text-3xl font-black h-auto">
+          <div className="bg-white border-[3px] border-primary p-12 rounded-[48px] text-center shadow-xl">
+            <h3 className="text-3xl font-extrabold mb-8 text-slate-900">Solicitá una entrevista</h3>
+            <Button asChild className="w-full rounded-full py-9 text-2xl font-bold h-auto shadow-lg">
               <a href={`https://wa.me/${WHATSAPP}`} target="_blank" rel="noreferrer">
                 WhatsApp
               </a>
@@ -228,9 +221,9 @@ function Index() {
       </section>
 
       {/* Footer */}
-      <footer className="border-t py-20 text-center text-muted-foreground bg-secondary/10">
-        <p className="text-2xl font-bold">© 2013 ACAPIA</p>
-        <p className="mt-2 uppercase tracking-[0.1em] text-sm italic max-w-4xl mx-auto px-6 leading-relaxed">
+      <footer className="border-t py-20 text-center bg-slate-50 text-slate-400">
+        <p className="text-2xl font-bold text-slate-900 mb-2">© 2013 ACAPIA</p>
+        <p className="uppercase tracking-[0.15em] text-xs font-medium max-w-3xl mx-auto px-6 italic leading-relaxed">
           Asociación Civil para la Asistencia, Prevención, Investigación y Acompañamiento en Salud Mental y problemáticas asociadas
         </p>
       </footer>
