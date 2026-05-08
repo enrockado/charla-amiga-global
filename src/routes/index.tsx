@@ -17,13 +17,13 @@ import {
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "ACAPIA – Salud Mental y Discapacidad en CABA" },
+      { title: "Salud Mental y Discapacidad en CABA" },
       {
         name: "description",
         content:
-          "ACAPIA Asociación Civil. Acompañamiento Terapéutico (AT) y Psicoterapia domiciliaria en CABA. Atención en salud mental, discapacidad, consumos y adicciones.",
+          "Asociación Civil. Acompañamiento Terapéutico (AT) y Psicoterapia domiciliaria en CABA. Atención en salud mental, discapacidad, consumos y adicciones.",
       },
-      { property: "og:title", content: "ACAPIA – Salud Mental y Discapacidad en CABA" },
+      { property: "og:title", content: "Salud Mental y Discapacidad en CABA" },
       {
         property: "og:description",
         content:
@@ -41,15 +41,15 @@ const EMAIL = "acapiaasociacioncivil@gmail.com";
 function Index() {
   return (
     <div className="min-h-screen bg-background text-foreground">
-      {/* Header escalado un 30% más */}
+      {/* Header con Logo extra grande */}
       <header className="sticky top-0 z-40 border-b border-border/60 bg-background/80 backdrop-blur">
         <div className="mx-auto flex max-w-full items-center justify-between px-12 py-10">
           <a href="#top" className="flex items-center">
-            {/* Logo un 30% más grande (de 44 a 56) */}
-            <img src={logoImg} alt="ACAPIA" className="h-56 w-56 object-contain" />
+            {/* Logo agrandado un 30% adicional (h-72) */}
+            <img src={logoImg} alt="ACAPIA" className="h-72 w-72 object-contain" />
           </a>
           
-          {/* Menú un 30% más grande (de xl a 3xl) y con más separación */}
+          {/* Menú prominente en negrita */}
           <nav className="hidden gap-14 text-3xl font-black text-foreground md:flex">
             <a href="#nosotros" className="hover:text-primary transition-colors">Nosotros</a>
             <a href="#servicios" className="hover:text-primary transition-colors">Servicios</a>
@@ -58,7 +58,6 @@ function Index() {
             <a href="#contacto" className="hover:text-primary transition-colors">Contacto</a>
           </nav>
 
-          {/* Botón de WhatsApp más robusto */}
           <Button asChild className="rounded-full text-2xl font-black px-12 py-8 h-auto">
             <a href={`https://wa.me/${WHATSAPP}`} target="_blank" rel="noreferrer">
               WhatsApp
@@ -79,8 +78,9 @@ function Index() {
               <Heart className="h-3.5 w-3.5 text-primary" />
               Asociación Civil · CABA
             </span>
+            {/* Texto modificado: Eliminado "ACAPIA —" */}
             <h1 className="mt-5 text-4xl font-semibold leading-tight tracking-tight md:text-5xl">
-              ACAPIA — Atención en{" "}
+              Atención en{" "}
               <span className="bg-[image:var(--gradient-primary)] bg-clip-text text-transparent">
                 Salud Mental y Discapacidad
               </span>
@@ -115,7 +115,7 @@ function Index() {
         </div>
       </section>
 
-      {/* El resto del código de las secciones se mantiene igual */}
+      {/* El resto de las secciones se mantienen igual para asegurar el funcionamiento */}
       <section id="nosotros" className="mx-auto max-w-6xl px-6 py-20">
         <div className="mx-auto max-w-3xl text-center">
           <p className="text-sm font-medium uppercase tracking-wider text-primary">
@@ -127,25 +127,19 @@ function Index() {
           <p className="mt-5 text-lg text-muted-foreground">
             Somos una asociación civil orientada a la atención en salud mental,
             discapacidad y problemáticas vinculadas a consumos.
-            Brindamos prestaciones personalizadas, con enfoque clínico comunitario y
-            acompañamiento continuo, articulando con profesionales y redes de atención.
+            Brindamos prestaciones personalizadas con enfoque clínico comunitario.
           </p>
         </div>
       </section>
 
       <section id="servicios" className="bg-secondary/40 py-20">
         <div className="mx-auto max-w-6xl px-6">
-          <div className="mx-auto max-w-2xl text-center">
-            <h2 className="mt-3 text-3xl font-semibold tracking-tight md:text-4xl">
-              Servicios que ofrecemos
-            </h2>
-          </div>
           <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {[
               { icon: Home, title: "Acompañamiento Terapéutico", desc: "AT domiciliario sostenido y planificado clínicamente." },
               { icon: Heart, title: "Psicoterapia individual", desc: "Espacios terapéuticos adaptados a cada persona." },
               { icon: Stethoscope, title: "Intervenciones en salud mental", desc: "Abordajes integrales y articulados con el equipo tratante." },
-              { icon: ClipboardList, title: "Atención ambulatoria", desc: "Consultorio propio para atención ambulatoria y seguimiento clínico." },
+              { icon: ClipboardList, title: "Atención ambulatoria", desc: "Consultorio propio para atención y seguimiento clínico." },
               { icon: Users, title: "Consumos problemáticos", desc: "Asistencia integral en situaciones de consumo." },
               { icon: CheckCircle2, title: "Obras sociales", desc: "Trabajamos con prestaciones en discapacidad." },
             ].map(({ icon: Icon, title, desc }) => (
