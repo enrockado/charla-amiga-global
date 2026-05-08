@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import logoImg from "@/assets/logo.png";
+import logoImg from "@/assets/logo.png"; // Asegúrate de que este sea el nuevo archivo
 import { Button } from "@/components/ui/button";
 import React from "react";
 import {
@@ -29,6 +29,7 @@ const WHATSAPP = "541137914461";
 const WHATSAPP_DISPLAY = "011 3791-4461";
 const EMAIL = "acapiaasociacioncivil@gmail.com";
 
+// SVG decorativo para el Hero (Acompañamos, Incluimos, Transformamos)
 const HeroSvg = () => (
   <svg width="380" height="320" viewBox="0 0 380 320" xmlns="http://www.w3.org/2000/svg" className="w-full h-auto max-w-[450px] drop-shadow-xl">
     <rect width="380" height="320" rx="24" fill="#f0eef8"/>
@@ -48,32 +49,25 @@ const HeroSvg = () => (
     <rect x="50" y="232" width="20" height="20" rx="2" fill="none" stroke="#e87c2e" strokeWidth="1" opacity="0.2" transform="rotate(45 60 242)"/>
     <text x="86" y="236" fontFamily="Inter, sans-serif" fontSize="10" fontWeight="300" fill="#e87c2e" opacity="0.6" letterSpacing="3">TRANSFORMAMOS</text>
     <line x1="86" y1="248" x2="280" y2="248" stroke="#1e2d6b" strokeWidth="0.6" opacity="0.08"/>
-    <circle cx="330" cy="100" r="42" fill="none" stroke="#1e2d6b" strokeWidth="0.8" opacity="0.07"/>
-    <circle cx="330" cy="100" r="28" fill="none" stroke="#e87c2e" strokeWidth="0.8" opacity="0.07"/>
-    <rect x="298" y="55" width="22" height="22" rx="2.5" fill="#1e2d6b" opacity="0.07" transform="rotate(45 309 66)"/>
-    <rect x="318" y="80" width="16" height="16" rx="2" fill="#e87c2e" opacity="0.1" transform="rotate(45 326 88)"/>
-    <rect x="300" y="105" width="18" height="18" rx="2" fill="#1e2d6b" opacity="0.06" transform="rotate(45 309 114)"/>
   </svg>
 );
 
 function Index() {
   return (
     <div className="min-h-screen bg-background text-foreground scroll-smooth">
-      {/* Header: Logo aumentado un 20% y totalmente visible */}
+      {/* Header: Logo +15% y Nav atenuada */}
       <header className="sticky top-0 z-[100] border-b border-border/60 bg-background/95 backdrop-blur">
         <div className="mx-auto flex max-w-full items-center justify-between px-12 py-3">
-          <a href="#top" className="flex items-center">
-            {/* Contenedor ajustado para el aumento del 20% */}
-            <div className="h-[102px] w-[114px] flex items-center justify-center">
-              <img 
-                src={logoImg} 
-                alt="ACAPIA" 
-                className="h-[132px] w-auto max-w-none pointer-events-none"
-                style={{ marginTop: "-2px" }} // Ajuste fino
-              />
-            </div>
+          <a href="#top" className="flex items-center overflow-hidden h-[110px]">
+            <img 
+              src={logoImg} 
+              alt="ACAPIA" 
+              className="h-[160px] w-auto object-contain object-top pointer-events-none -translate-y-2"
+              style={{ clipPath: 'inset(0 0 20% 0)' }} // Recorte preciso para ocultar las letras pequeñas del logo nuevo
+            />
           </a>
           
+          {/* Navegación con font-semibold (más fina que antes) */}
           <nav className="hidden gap-10 text-xl font-semibold text-slate-700 md:flex">
             <a href="#nosotros" className="hover:text-primary transition-colors">Nosotros</a>
             <a href="#servicios" className="hover:text-primary transition-colors">Servicios</a>
@@ -94,13 +88,13 @@ function Index() {
       <section id="top" className="relative pt-24">
         <div className="mx-auto grid max-w-6xl items-center gap-20 px-6 py-20 md:grid-cols-2">
           <div>
-            <h1 className="text-4xl font-semibold leading-tight md:text-5xl text-slate-900">
+            <h1 className="text-4xl font-bold leading-tight md:text-5xl text-slate-900">
               Atención en{" "}
-              <span className="bg-[image:var(--gradient-primary)] bg-clip-text text-transparent font-bold">
-                Salud Mental <span className="font-normal opacity-80 text-[0.9em]">y Discapacidad</span>
+              <span className="bg-[image:var(--gradient-primary)] bg-clip-text text-transparent">
+                Salud Mental <span className="font-medium opacity-80">y Discapacidad</span>
               </span>
             </h1>
-            <p className="mt-5 text-xl text-slate-500 font-light leading-relaxed">
+            <p className="mt-5 text-xl text-slate-500 font-medium leading-relaxed">
               Acompañamiento Terapéutico y Psicoterapia con atención domiciliaria y ambulatoria en la Ciudad Autónoma de Buenos Aires.
             </p>
             <div className="mt-8">
@@ -121,8 +115,8 @@ function Index() {
       <section id="nosotros" className="scroll-mt-[100px] py-32 mx-auto max-w-6xl px-6">
         <div className="text-center">
           <p className="text-sm font-bold uppercase tracking-widest text-primary/70 mb-4">Desde 2013</p>
-          <h2 className="text-5xl font-extrabold text-slate-900 mb-8 tracking-tight">Quiénes Somos</h2>
-          <p className="text-2xl text-slate-500 leading-relaxed max-w-5xl mx-auto font-light">
+          <h2 className="text-5xl font-black text-slate-900 mb-8 tracking-tight">Quiénes Somos</h2>
+          <p className="text-2xl text-slate-500 leading-relaxed max-w-5xl mx-auto font-medium">
             Somos una Asociación Civil constituida en el año 2013. Brindamos atención en salud mental, discapacidad y problemáticas vinculadas a consumos. Ofrecemos prestaciones personalizadas, con enfoque clínico comunitario y acompañamiento continuo, articulando con profesionales y redes de atención.
           </p>
         </div>
@@ -131,7 +125,7 @@ function Index() {
       {/* Servicios */}
       <section id="servicios" className="scroll-mt-[100px] bg-secondary/20 py-32">
         <div className="mx-auto max-w-6xl px-6">
-          <h2 className="text-5xl font-extrabold text-center text-slate-900 mb-20 tracking-tight">Servicios</h2>
+          <h2 className="text-5xl font-black text-center text-slate-900 mb-20 tracking-tight">Servicios</h2>
           <div className="grid gap-10 md:grid-cols-3">
             {[
               { title: "Acompañamiento", icon: <Home className="h-10 w-10" />, desc: "AT domiciliario y ambulatorio planificado bajo seguimiento clínico." },
@@ -141,7 +135,7 @@ function Index() {
               <div key={i} className="bg-card p-10 rounded-[32px] border border-slate-100 shadow-sm hover:shadow-md transition-shadow">
                 <div className="text-primary mb-6">{s.icon}</div>
                 <h3 className="text-2xl font-bold mb-4 text-slate-800">{s.title}</h3>
-                <p className="text-lg text-slate-500 font-light leading-snug">{s.desc}</p>
+                <p className="text-lg text-slate-500 font-medium leading-snug">{s.desc}</p>
               </div>
             ))}
           </div>
@@ -151,8 +145,8 @@ function Index() {
       {/* Modalidad */}
       <section id="modalidad" className="scroll-mt-[100px] py-32 mx-auto max-w-6xl px-6">
         <div className="grid md:grid-cols-2 gap-20 items-center">
-          <h2 className="text-5xl font-extrabold text-slate-900 tracking-tight">Nuestra Modalidad</h2>
-          <div className="space-y-6 text-xl text-muted-foreground font-light">
+          <h2 className="text-5xl font-black text-slate-900 tracking-tight">Nuestra Modalidad</h2>
+          <div className="space-y-6 text-xl text-slate-500 font-medium">
             <p>Sostenemos una práctica basada en la articulación constante con familias y equipos tratantes.</p>
             <ul className="space-y-4 font-bold text-slate-800 italic">
               <li>✓ Intervención Domiciliaria</li>
@@ -166,7 +160,7 @@ function Index() {
       {/* Proceso */}
       <section id="proceso" className="scroll-mt-[100px] bg-primary text-white py-40">
         <div className="mx-auto max-w-6xl px-6 text-center">
-          <h2 className="text-5xl font-extrabold mb-20 tracking-tight">Proceso de Ingreso</h2>
+          <h2 className="text-5xl font-black mb-20 tracking-tight">Proceso de Ingreso</h2>
           <div className="grid md:grid-cols-3 gap-16">
             {[
               { num: "01", t: "Admisión", d: "Evaluación inicial del caso y necesidades." },
@@ -174,9 +168,9 @@ function Index() {
               { num: "03", t: "Seguimiento", d: "Monitoreo constante del proceso terapéutico." }
             ].map((p, i) => (
               <div key={i}>
-                <span className="text-7xl font-extrabold opacity-20 block mb-4">{p.num}</span>
+                <span className="text-7xl font-black opacity-20 block mb-4">{p.num}</span>
                 <h3 className="text-2xl font-bold mb-2">{p.t}</h3>
-                <p className="text-lg opacity-90 font-light">{p.d}</p>
+                <p className="text-lg opacity-90 font-medium">{p.d}</p>
               </div>
             ))}
           </div>
@@ -187,7 +181,7 @@ function Index() {
       <section id="contacto" className="scroll-mt-[100px] py-40 mx-auto max-w-6xl px-6">
         <div className="grid md:grid-cols-2 gap-20">
           <div className="space-y-12">
-            <h2 className="text-6xl font-extrabold text-slate-900 tracking-tighter">Contacto</h2>
+            <h2 className="text-6xl font-black text-slate-900 tracking-tighter">Contacto</h2>
             <div className="space-y-8">
               <div className="flex items-center gap-6">
                 <Mail className="text-primary h-8 w-8" />
@@ -200,7 +194,7 @@ function Index() {
                 <Phone className="text-primary h-8 w-8" />
                 <div className="flex flex-col">
                   <span className="text-xs font-bold uppercase text-slate-400 tracking-[0.2em]">WhatsApp</span>
-                  <span className="text-3xl font-extrabold text-slate-900">{WHATSAPP_DISPLAY}</span>
+                  <span className="text-3xl font-black text-slate-900">{WHATSAPP_DISPLAY}</span>
                 </div>
               </div>
               <div className="flex items-center gap-6">
@@ -213,7 +207,7 @@ function Index() {
             </div>
           </div>
           <div className="bg-white border-[3px] border-primary p-12 rounded-[48px] text-center shadow-xl">
-            <h3 className="text-3xl font-extrabold mb-8 text-slate-900">Solicitá una entrevista</h3>
+            <h3 className="text-3xl font-black mb-8 text-slate-900">Solicitá una entrevista</h3>
             <Button asChild className="w-full rounded-full py-9 text-2xl font-bold h-auto shadow-lg">
               <a href={`https://wa.me/${WHATSAPP}`} target="_blank" rel="noreferrer">
                 WhatsApp
@@ -225,7 +219,7 @@ function Index() {
 
       {/* Footer */}
       <footer className="border-t py-20 text-center bg-slate-50 text-slate-400">
-        <p className="text-2xl font-bold text-slate-900 mb-2">© 2013 ACAPIA</p>
+        <p className="text-2xl font-black text-slate-900 mb-2">© 2013 ACAPIA</p>
         <p className="uppercase tracking-[0.15em] text-xs font-medium max-w-3xl mx-auto px-6 italic leading-relaxed">
           Asociación Civil para la Asistencia, Prevención, Investigación y Acompañamiento en Salud Mental y problemáticas asociadas
         </p>
