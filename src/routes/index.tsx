@@ -35,11 +35,10 @@ const EMAIL = "acapiaasociacioncivil@gmail.com";
 function Index() {
   return (
     <div className="min-h-screen bg-background text-foreground scroll-smooth">
-      {/* Header con Logo escalado al 115% (h-92) */}
+      {/* Header con Logo Gigante (h-92) */}
       <header className="sticky top-0 z-[100] border-b border-border/60 bg-background/95 backdrop-blur">
         <div className="mx-auto flex max-w-full items-center justify-between px-12 py-6">
           <a href="#top" className="flex items-center">
-            {/* Logo con tamaño final incrementado */}
             <img 
               src={logoImg} 
               alt="ACAPIA" 
@@ -92,7 +91,7 @@ function Index() {
         </div>
       </section>
 
-      {/* Nosotros con el texto solicitado */}
+      {/* Nosotros */}
       <section id="nosotros" className="scroll-mt-[450px] py-32 mx-auto max-w-6xl px-6">
         <div className="text-center">
           <p className="text-sm font-medium uppercase tracking-wider text-primary mb-4">Trayectoria</p>
@@ -206,9 +205,12 @@ function Index() {
         </div>
       </section>
 
+      {/* Footer actualizado con año de fundación y texto exacto solicitado */}
       <footer className="border-t py-20 text-center text-muted-foreground bg-secondary/10">
-        <p className="text-2xl font-bold">© {new Date().getFullYear()} ACAPIA</p>
-        <p className="mt-2 uppercase tracking-[0.2em] text-sm italic">Asociación Civil para la Asistencia, Prevención, Investigación y Acompañamiento</p>
+        <p className="text-2xl font-bold">© 2013 ACAPIA</p>
+        <p className="mt-2 uppercase tracking-[0.1em] text-sm italic max-w-3xl mx-auto px-6 leading-relaxed">
+          Asociación Civil para la Asistencia, Prevención, Investigación y Acompañamiento en Salud Mental y problemáticas asociadas
+        </p>
       </footer>
     </div>
   );
