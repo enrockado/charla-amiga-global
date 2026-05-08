@@ -56,14 +56,14 @@ function Index() {
     <div className="min-h-screen bg-background text-foreground scroll-smooth">
       {/* Header: Logo +15% adicional y Nav suavizada */}
       <header className="sticky top-0 z-[100] border-b border-border/60 bg-background/95 backdrop-blur">
-        <div className="mx-auto flex max-w-full items-center justify-between px-12 py-4">
+        <div className="mx-auto flex max-w-full items-center justify-between px-12 py-5">
           <a href="#top" className="flex items-center">
-            {/* Contenedor amplio para que el logo se vea completo con su nuevo tamaño */}
-            <div className="h-[100px] flex items-center justify-center">
+            {/* Contenedor optimizado: SIN Recortes y un 15% más grande */}
+            <div className="h-[120px] flex items-center">
               <img 
                 src={logoImg} 
                 alt="ACAPIA" 
-                className="h-[140px] w-auto max-w-none pointer-events-none"
+                className="h-[160px] w-auto pointer-events-none object-contain"
               />
             </div>
           </a>
@@ -112,8 +112,8 @@ function Index() {
         </div>
       </section>
 
-      {/* Nosotros - Negrita atenuada en el título */}
-      <section id="nosotros" className="scroll-mt-[120px] py-32 mx-auto max-w-6xl px-6">
+      {/* Nosotros - Negrita atenuada (font-bold en lugar de font-black) */}
+      <section id="nosotros" className="scroll-mt-[150px] py-32 mx-auto max-w-6xl px-6">
         <div className="text-center">
           <p className="text-sm font-bold uppercase tracking-widest text-primary/70 mb-4">Desde 2013</p>
           <h2 className="text-5xl font-bold text-slate-900 mb-8 tracking-tight">Quiénes Somos</h2>
@@ -124,7 +124,7 @@ function Index() {
       </section>
 
       {/* Servicios */}
-      <section id="servicios" className="scroll-mt-[120px] bg-secondary/20 py-32">
+      <section id="servicios" className="scroll-mt-[150px] bg-secondary/20 py-32">
         <div className="mx-auto max-w-6xl px-6">
           <h2 className="text-5xl font-bold text-center text-slate-900 mb-20 tracking-tight">Servicios</h2>
           <div className="grid gap-10 md:grid-cols-3">
@@ -144,7 +144,7 @@ function Index() {
       </section>
 
       {/* Modalidad */}
-      <section id="modalidad" className="scroll-mt-[120px] py-32 mx-auto max-w-6xl px-6">
+      <section id="modalidad" className="scroll-mt-[150px] py-32 mx-auto max-w-6xl px-6">
         <div className="grid md:grid-cols-2 gap-20 items-center">
           <h2 className="text-5xl font-bold text-slate-900 tracking-tight">Nuestra Modalidad</h2>
           <div className="space-y-6 text-xl text-slate-500 font-light">
@@ -159,7 +159,7 @@ function Index() {
       </section>
 
       {/* Proceso */}
-      <section id="proceso" className="scroll-mt-[120px] bg-primary text-white py-40">
+      <section id="proceso" className="scroll-mt-[150px] bg-primary text-white py-40">
         <div className="mx-auto max-w-6xl px-6 text-center">
           <h2 className="text-5xl font-bold mb-20 tracking-tight">Proceso de Ingreso</h2>
           <div className="grid md:grid-cols-3 gap-16">
@@ -179,7 +179,7 @@ function Index() {
       </section>
 
       {/* Contacto */}
-      <section id="contacto" className="scroll-mt-[120px] py-40 mx-auto max-w-6xl px-6">
+      <section id="contacto" className="scroll-mt-[150px] py-40 mx-auto max-w-6xl px-6">
         <div className="grid md:grid-cols-2 gap-20">
           <div className="space-y-12">
             <h2 className="text-6xl font-bold text-slate-900 tracking-tighter">Contacto</h2>
