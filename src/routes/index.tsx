@@ -41,21 +41,27 @@ const EMAIL = "acapiaasociacioncivil@gmail.com";
 function Index() {
   return (
     <div className="min-h-screen bg-background text-foreground">
-      {/* Header Gigante */}
+      {/* Header Ajustado */}
       <header className="sticky top-0 z-40 border-b border-border/60 bg-background/80 backdrop-blur">
-        <div className="mx-auto flex max-w-full items-center justify-between px-10 py-16">
-          <a href="#top" className="flex items-center gap-6">
-            <img src={logoImg} alt="ACAPIA" className="h-80 w-80 object-contain" />
-            <span className="text-9xl font-bold tracking-tight text-primary">acapia</span>
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-6">
+          <a href="#top" className="flex items-center gap-4">
+            {/* Logo se mantiene en 48 para que destaque */}
+            <img src={logoImg} alt="ACAPIA" className="h-48 w-48 object-contain" />
+            {/* La palabra acapia ahora es más chica (4xl) */}
+            <span className="text-4xl font-bold tracking-tight text-primary">acapia</span>
           </a>
-          <nav className="hidden gap-12 text-5xl font-black text-foreground md:flex">
-            <a href="#nosotros" className="hover:text-primary">Nosotros</a>
-            <a href="#servicios" className="hover:text-primary">Servicios</a>
-            <a href="#modalidad" className="hover:text-primary">Modalidad</a>
-            <a href="#proceso" className="hover:text-primary">Proceso</a>
-            <a href="#contacto" className="hover:text-primary">Contacto</a>
+          
+          {/* Menú más chico (xl) pero sigue en negrita */}
+          <nav className="hidden gap-8 text-xl font-bold text-foreground md:flex">
+            <a href="#nosotros" className="hover:text-primary transition-colors">Nosotros</a>
+            <a href="#servicios" className="hover:text-primary transition-colors">Servicios</a>
+            <a href="#modalidad" className="hover:text-primary transition-colors">Modalidad</a>
+            <a href="#proceso" className="hover:text-primary transition-colors">Proceso</a>
+            <a href="#contacto" className="hover:text-primary transition-colors">Contacto</a>
           </nav>
-          <Button asChild className="rounded-full text-4xl font-black px-12 py-16 h-auto">
+
+          {/* Botón de WhatsApp más equilibrado */}
+          <Button asChild className="rounded-full text-lg font-bold px-8 py-6 h-auto">
             <a href={`https://wa.me/${WHATSAPP}`} target="_blank" rel="noreferrer">
               WhatsApp
             </a>
@@ -63,10 +69,10 @@ function Index() {
         </div>
       </header>
 
-      {/* Hero con tu Imagen de Fondo */}
+      {/* Hero */}
       <section id="top" className="relative overflow-hidden">
         <div 
-          className="absolute inset-0 -z-10 bg-cover bg-center opacity-50" 
+          className="absolute inset-0 -z-10 bg-cover bg-center opacity-40" 
           style={{ backgroundImage: `url(${heroImg})` }} 
         />
         <div className="mx-auto grid max-w-6xl items-center gap-12 px-6 py-20 md:grid-cols-2 md:py-28">
@@ -111,8 +117,7 @@ function Index() {
         </div>
       </section>
 
-      {/* El resto del código permanece igual para no romper las secciones inferiores */}
-      {/* Nosotros */}
+      {/* Secciones de contenido */}
       <section id="nosotros" className="mx-auto max-w-6xl px-6 py-20">
         <div className="mx-auto max-w-3xl text-center">
           <p className="text-sm font-medium uppercase tracking-wider text-primary">
@@ -127,205 +132,21 @@ function Index() {
             Brindamos prestaciones personalizadas, con enfoque clínico comunitario y
             acompañamiento continuo, articulando con profesionales y redes de atención.
           </p>
-          <p className="mt-4 text-lg text-muted-foreground">
-            Promovemos además actividades de investigación,
-            formación y desarrollo comunitario en salud mental.
-          </p>
         </div>
       </section>
 
-      {/* Servicios */}
       <section id="servicios" className="bg-secondary/40 py-20">
         <div className="mx-auto max-w-6xl px-6">
           <div className="mx-auto max-w-2xl text-center">
-            <p className="text-sm font-medium uppercase tracking-wider text-primary">
-              Qué hacemos
-            </p>
             <h2 className="mt-3 text-3xl font-semibold tracking-tight md:text-4xl">
               Servicios que ofrecemos
             </h2>
           </div>
           <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {[
-              {
-                icon: Home,
-                title: "Acompañamiento Terapéutico",
-                desc: "AT domiciliario sostenido y planificado clínicamente.",
-              },
-              {
-                icon: Heart,
-                title: "Psicoterapia individual",
-                desc: "Espacios terapéuticos adaptados a cada persona.",
-              },
-              {
-                icon: Stethoscope,
-                title: "Intervenciones en salud mental",
-                desc: "Abordajes integrales y articulados con el equipo tratante.",
-              },
-              {
-                icon: ClipboardList,
-                title: "Atención ambulatoria",
-                desc: "Contamos con consultorio propio para atención ambulatoria, entrevistas y seguimiento clínico.",
-              },
-              {
-                icon: Users,
-                title: "Consumos problemáticos",
-                desc: "Asistencia integral en situaciones de consumo problemático.",
-              },
-              {
-                icon: ClipboardList,
-                title: "Seguimiento clínico",
-                desc: "Coordinación con profesionales tratantes e informes.",
-              },
-              {
-                icon: CheckCircle2,
-                title: "Obras sociales",
-                desc: "Trabajamos con obras sociales y prestaciones en discapacidad.",
-              },
-            ].map(({ icon: Icon, title, desc }) => (
-              <div
-                key={title}
-                className="group rounded-2xl border border-border bg-card p-6 shadow-[var(--shadow-card)] transition hover:-translate-y-0.5 hover:shadow-[var(--shadow-soft)]"
-              >
-                <div className="grid h-11 w-11 place-items-center rounded-xl bg-accent text-accent-foreground">
-                  <Icon className="h-5 w-5" />
-                </div>
-                <h3 className="mt-5 text-lg font-semibold">{title}</h3>
-                <p className="mt-2 text-sm text-muted-foreground">{desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Modalidad */}
-      <section id="modalidad" className="mx-auto max-w-6xl px-6 py-20">
-        <div className="grid gap-10 md:grid-cols-2 md:items-center">
-          <div>
-            <p className="text-sm font-medium uppercase tracking-wider text-primary">
-              Modalidad de atención
-            </p>
-            <h2 className="mt-3 text-3xl font-semibold tracking-tight md:text-4xl">
-              Atención domiciliaria y ambulatoria con respaldo profesional
-            </h2>
-            <ul className="mt-6 space-y-4 text-muted-foreground">
-              <li className="flex gap-3">
-                <MapPin className="mt-1 h-5 w-5 flex-shrink-0 text-primary" />
-                <span><strong className="text-foreground">Zona:</strong> Ciudad Autónoma de Buenos Aires (CABA).</span>
-              </li>
-              <li className="flex gap-3">
-                <Home className="mt-1 h-5 w-5 flex-shrink-0 text-primary" />
-                <span><strong className="text-foreground">Atención domiciliaria</strong> en el espacio cotidiano del paciente.</span>
-              </li>
-              <li className="flex gap-3">
-                <Stethoscope className="mt-1 h-5 w-5 flex-shrink-0 text-primary" />
-                <span><strong className="text-foreground">Consultorio propio</strong> para atención ambulatoria, entrevistas y coordinación.</span>
-              </li>
-              <li className="flex gap-3">
-                <CheckCircle2 className="mt-1 h-5 w-5 flex-shrink-0 text-primary" />
-                <span>Trabajamos con <strong className="text-foreground">obras sociales</strong> y prestaciones en discapacidad.</span>
-              </li>
-            </ul>
-          </div>
-          <div className="rounded-3xl bg-[image:var(--gradient-warm)] p-10 shadow-[var(--shadow-card)]">
-            <blockquote className="text-xl font-medium leading-relaxed text-foreground/90">
-              “Acompañar es sostener un proceso clínico con presencia, escucha
-              y articulación con el equipo tratante.”
-            </blockquote>
-            <p className="mt-4 text-sm text-muted-foreground">— Equipo ACAPIA</p>
-          </div>
-        </div>
-      </section>
-
-      {/* Proceso */}
-      <section id="proceso" className="bg-secondary/40 py-20">
-        <div className="mx-auto max-w-6xl px-6">
-          <div className="mx-auto max-w-2xl text-center">
-            <p className="text-sm font-medium uppercase tracking-wider text-primary">
-              Cómo trabajamos
-            </p>
-            <h2 className="mt-3 text-3xl font-semibold tracking-tight md:text-4xl">
-              Un proceso claro, paso a paso
-            </h2>
-          </div>
-          <ol className="mt-12 grid gap-6 md:grid-cols-3">
-            {[
-              ["01", "Recepción del caso", "Tomamos contacto y escuchamos la consulta."],
-              ["02", "Evaluación inicial", "Analizamos necesidades clínicas y contexto."],
-              ["03", "Presupuesto", "Presentamos la propuesta con claridad."],
-              ["04", "Autorizaciones", "Gestionamos la cobertura con la obra social."],
-              ["05", "Inicio de la prestación", "Comenzamos el AT o la psicoterapia."],
-              ["06", "Seguimiento e informes", "Coordinación con profesionales tratantes."],
-            ].map(([n, t, d]) => (
-              <li
-                key={n}
-                className="rounded-2xl border border-border bg-card p-6 shadow-[var(--shadow-card)]"
-              >
-                <span className="text-sm font-semibold text-primary">{n}</span>
-                <h3 className="mt-2 text-lg font-semibold">{t}</h3>
-                <p className="mt-2 text-sm text-muted-foreground">{d}</p>
-              </li>
-            ))}
-          </ol>
-        </div>
-      </section>
-
-      {/* Contacto */}
-      <section id="contacto" className="mx-auto max-w-6xl px-6 py-20">
-        <div className="overflow-hidden rounded-3xl border border-border bg-[image:var(--gradient-warm)] p-10 md:p-14 shadow-[var(--shadow-soft)]">
-          <div className="grid gap-10 md:grid-cols-2 md:items-center">
-            <div>
-              <h2 className="text-3xl font-semibold tracking-tight md:text-4xl">
-                ¿Necesitás acompañamiento o atención en salud mental?
-              </h2>
-              <p className="mt-4 text-muted-foreground">
-                Contactanos y evaluamos tu caso a la brevedad. También recibimos
-                derivaciones profesionales y consultas.
-              </p>
-            </div>
-            <div className="space-y-4">
-              <a
-                href={`https://wa.me/${WHATSAPP}`}
-                target="_blank"
-                rel="noreferrer"
-                className="flex items-center gap-4 rounded-2xl bg-card p-5 shadow-[var(--shadow-card)] transition hover:-translate-y-0.5"
-              >
-                <span className="grid h-11 w-11 place-items-center rounded-xl bg-primary text-primary-foreground">
-                  <Phone className="h-5 w-5" />
-                </span>
-                <span>
-                  <span className="block text-xs font-medium uppercase tracking-wider text-muted-foreground">
-                    WhatsApp
-                  </span>
-                  <span className="block text-base font-semibold">{WHATSAPP_DISPLAY}</span>
-                </span>
-              </a>
-              <a
-                href={`mailto:${EMAIL}`}
-                className="flex items-center gap-4 rounded-2xl bg-card p-5 shadow-[var(--shadow-card)] transition hover:-translate-y-0.5"
-              >
-                <span className="grid h-11 w-11 place-items-center rounded-xl bg-primary text-primary-foreground">
-                  <Mail className="h-5 w-5" />
-                </span>
-                <span>
-                  <span className="block text-xs font-medium uppercase tracking-wider text-muted-foreground">
-                    Email
-                  </span>
-                  <span className="block text-base font-semibold">{EMAIL}</span>
-                </span>
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Footer */}
-      <footer className="border-t border-border/60">
-        <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-3 px-6 py-8 text-sm text-muted-foreground md:flex-row">
-          <p>© {new Date().getFullYear()} ACAPIA · Asociación Civil</p>
-          <p>Atención en Salud Mental y Discapacidad — CABA</p>
-        </div>
-      </footer>
-    </div>
-  );
-}
+              { icon: Home, title: "Acompañamiento Terapéutico", desc: "AT domiciliario sostenido y planificado clínicamente." },
+              { icon: Heart, title: "Psicoterapia individual", desc: "Espacios terapéuticos adaptados a cada persona." },
+              { icon: Stethoscope, title: "Intervenciones en salud mental", desc: "Abordajes integrales y articulados con el equipo tratante." },
+              { icon: ClipboardList, title: "Atención ambulatoria", desc: "Consultorio propio para entrevistas y seguimiento clínico." },
+              { icon: Users, title: "Consumos problemáticos", desc: "Asistencia integral en situaciones de consumo." },
+              { icon: CheckCircle2, title: "Obras sociales", desc: "Prestaciones en discapacidad y obras sociales." },
