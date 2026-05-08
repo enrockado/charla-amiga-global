@@ -59,16 +59,19 @@ const HeroSvg = () => (
 function Index() {
   return (
     <div className="min-h-screen bg-background text-foreground scroll-smooth">
-      {/* Header: Logo reducido con recorte preciso */}
+      {/* Header: Logo reducido 15% con contenedor de recorte limpio */}
       <header className="sticky top-0 z-[100] border-b border-border/60 bg-background/95 backdrop-blur">
         <div className="mx-auto flex max-w-full items-center justify-between px-12 py-3">
-          <a href="#top" className="flex items-center overflow-hidden h-[120px]">
-            <img 
-              src={logoImg} 
-              alt="ACAPIA" 
-              className="h-[170px] w-auto object-contain object-top pointer-events-none -translate-y-2"
-              style={{ clipPath: 'inset(0 0 17% 0)' }}
-            />
+          <a href="#top" className="flex items-center">
+            {/* Contenedor que oculta las palabras inferiores deslizando la imagen */}
+            <div className="overflow-hidden h-[85px] w-[95px] flex items-start justify-center">
+              <img 
+                src={logoImg} 
+                alt="ACAPIA" 
+                className="h-[110px] w-auto max-w-none pointer-events-none"
+                style={{ marginTop: "-2px" }} // Ajuste fino para centrar el icono y nombre
+              />
+            </div>
           </a>
           
           <nav className="hidden gap-10 text-xl font-semibold text-slate-700 md:flex">
@@ -79,7 +82,7 @@ function Index() {
             <a href="#contacto" className="hover:text-primary transition-colors">Contacto</a>
           </nav>
 
-          <Button asChild className="rounded-full text-lg font-bold px-10 py-6 h-auto">
+          <Button asChild className="rounded-full text-lg font-bold px-10 py-6 h-auto shadow-sm">
             <a href={`https://wa.me/${WHATSAPP}`} target="_blank" rel="noreferrer">
               WhatsApp
             </a>
@@ -115,7 +118,7 @@ function Index() {
       </section>
 
       {/* Nosotros */}
-      <section id="nosotros" className="scroll-mt-[350px] py-32 mx-auto max-w-6xl px-6">
+      <section id="nosotros" className="scroll-mt-[100px] py-32 mx-auto max-w-6xl px-6">
         <div className="text-center">
           <p className="text-sm font-bold uppercase tracking-widest text-primary/70 mb-4">Desde 2013</p>
           <h2 className="text-5xl font-extrabold text-slate-900 mb-8 tracking-tight">Quiénes Somos</h2>
@@ -126,7 +129,7 @@ function Index() {
       </section>
 
       {/* Servicios */}
-      <section id="servicios" className="scroll-mt-[350px] bg-secondary/20 py-32">
+      <section id="servicios" className="scroll-mt-[100px] bg-secondary/20 py-32">
         <div className="mx-auto max-w-6xl px-6">
           <h2 className="text-5xl font-extrabold text-center text-slate-900 mb-20 tracking-tight">Servicios</h2>
           <div className="grid gap-10 md:grid-cols-3">
@@ -146,7 +149,7 @@ function Index() {
       </section>
 
       {/* Modalidad */}
-      <section id="modalidad" className="scroll-mt-[350px] py-32 mx-auto max-w-6xl px-6">
+      <section id="modalidad" className="scroll-mt-[100px] py-32 mx-auto max-w-6xl px-6">
         <div className="grid md:grid-cols-2 gap-20 items-center">
           <h2 className="text-5xl font-extrabold text-slate-900 tracking-tight">Nuestra Modalidad</h2>
           <div className="space-y-6 text-xl text-slate-500 font-light">
@@ -161,7 +164,7 @@ function Index() {
       </section>
 
       {/* Proceso */}
-      <section id="proceso" className="scroll-mt-[350px] bg-primary text-white py-40">
+      <section id="proceso" className="scroll-mt-[100px] bg-primary text-white py-40">
         <div className="mx-auto max-w-6xl px-6 text-center">
           <h2 className="text-5xl font-extrabold mb-20 tracking-tight">Proceso de Ingreso</h2>
           <div className="grid md:grid-cols-3 gap-16">
@@ -181,7 +184,7 @@ function Index() {
       </section>
 
       {/* Contacto */}
-      <section id="contacto" className="scroll-mt-[350px] py-40 mx-auto max-w-6xl px-6">
+      <section id="contacto" className="scroll-mt-[100px] py-40 mx-auto max-w-6xl px-6">
         <div className="grid md:grid-cols-2 gap-20">
           <div className="space-y-12">
             <h2 className="text-6xl font-extrabold text-slate-900 tracking-tighter">Contacto</h2>
