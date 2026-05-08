@@ -14,11 +14,11 @@ import {
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "ACAPIA | Salud Mental y Discapacidad en CABA" },
+      { title: "ACAPIA | Salud Mental y Discapacidad" },
       {
         name: "description",
         content:
-          "Asociación Civil constituida en 2013. Acompañamiento Terapéutico (AT) y Psicoterapia personalizada en CABA.",
+          "Asociación Civil constituida en 2013. Acompañamiento Terapéutico (AT) y Psicoterapia personalizada.",
       },
     ],
   }),
@@ -45,23 +45,23 @@ const HeroSvg = () => (
 function Index() {
   return (
     <div className="min-h-screen bg-white text-foreground scroll-smooth">
-      {/* Módulo Superior Fijo con Tono Suave de Contraste */}
+      {/* Header con contraste y elementos centrados simétricamente */}
       <header className="sticky top-0 z-[100] border-b border-slate-200/60 bg-[#f8f9ff] shadow-sm">
-        <div className="mx-auto flex max-w-full items-center justify-between px-10 py-5">
+        <div className="mx-auto grid max-w-full grid-cols-3 items-center px-16 py-4">
           
-          {/* Logo: Centrado, sin recortes y tamaño aumentado */}
-          <div className="flex-1 flex justify-start pl-4">
+          {/* Logo: Sin palabras al pie, centrado hacia la izquierda */}
+          <div className="flex justify-start">
             <a href="#top" className="block">
               <img 
                 src={logoImg} 
                 alt="ACAPIA" 
-                className="h-[135px] w-auto pointer-events-none object-contain"
+                className="h-[150px] w-auto object-contain pointer-events-none"
               />
             </a>
           </div>
           
-          {/* Navegación Central: Gran presencia y grosor */}
-          <nav className="hidden gap-12 text-xl font-bold text-slate-800 md:flex">
+          {/* Navegación: Presencia fuerte y centrada */}
+          <nav className="hidden justify-center gap-10 text-xl font-bold text-slate-800 md:flex">
             <a href="#nosotros" className="hover:text-primary transition-colors tracking-tight">Nosotros</a>
             <a href="#servicios" className="hover:text-primary transition-colors tracking-tight">Servicios</a>
             <a href="#modalidad" className="hover:text-primary transition-colors tracking-tight">Modalidad</a>
@@ -69,9 +69,9 @@ function Index() {
             <a href="#contacto" className="hover:text-primary transition-colors tracking-tight">Contacto</a>
           </nav>
 
-          {/* Botón WhatsApp: Centrado a la derecha */}
-          <div className="flex-1 flex justify-end pr-4">
-            <Button asChild className="rounded-full text-lg font-bold px-10 py-7 h-auto shadow-md">
+          {/* Botón WhatsApp: Centrado hacia la derecha */}
+          <div className="flex justify-end">
+            <Button asChild className="rounded-full text-lg font-bold px-12 py-8 h-auto shadow-md">
               <a href={`https://wa.me/${WHATSAPP}`} target="_blank" rel="noreferrer">
                 WhatsApp
               </a>
@@ -81,7 +81,7 @@ function Index() {
       </header>
 
       {/* Hero */}
-      <section id="top" className="relative pt-12">
+      <section id="top" className="relative pt-16">
         <div className="mx-auto grid max-w-6xl items-center gap-20 px-6 py-20 md:grid-cols-2">
           <div>
             <h1 className="text-4xl font-semibold leading-tight md:text-5xl text-slate-900">
@@ -90,10 +90,10 @@ function Index() {
                 Salud Mental <span className="font-light opacity-70 text-[0.9em]">y Discapacidad</span>
               </span>
             </h1>
-            <p className="mt-6 text-xl text-slate-500 font-light leading-relaxed">
-              Acompañamiento Terapéutico y Psicoterapia con atención domiciliaria y ambulatoria en la Ciudad Autónoma de Buenos Aires.
+            <p className="mt-8 text-2xl text-slate-500 font-light leading-relaxed">
+              Acompañamiento Terapéutico y Psicoterapia con atención domiciliaria y ambulatoria.
             </p>
-            <div className="mt-10">
+            <div className="mt-12">
               <Button asChild size="lg" className="rounded-full px-12 py-8 text-xl h-auto font-bold shadow-lg hover:-translate-y-1 transition-transform">
                 <a href={`https://wa.me/${WHATSAPP}`} target="_blank" rel="noreferrer">
                   Contactar ahora
@@ -113,7 +113,7 @@ function Index() {
           <p className="text-sm font-bold uppercase tracking-widest text-primary/70 mb-4">Desde 2013</p>
           <h2 className="text-5xl font-bold text-slate-900 mb-8 tracking-tight">Quiénes Somos</h2>
           <p className="text-2xl text-slate-500 leading-relaxed max-w-5xl mx-auto font-light">
-            Somos una Asociación Civil constituida en el año 2013. Brindamos atención en salud mental, discapacidad y problemáticas vinculadas a consumos. Ofrecemos prestaciones personalizadas, con enfoque clínico comunitario.
+            Somos una Asociación Civil constituida en el año 2013. Brindamos atención en salud mental, discapacidad y problemáticas vinculadas a consumos. Ofrecemos prestaciones personalizadas con un enfoque clínico y humano.
           </p>
         </div>
       </section>
