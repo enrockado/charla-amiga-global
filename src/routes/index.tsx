@@ -45,9 +45,9 @@ function Index() {
       <header className="sticky top-0 z-40 border-b border-border/60 bg-background/80 backdrop-blur">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
           <a href="#top" className="flex items-center gap-2.5">
-            <img src={logoImg} alt="ACAPIA" className="h-10 w-10 object-contain" />
-            <span className="text-lg font-bold tracking-tight text-primary">acapia</span>
-          </a>
+  <img src={logoImg} alt="ACAPIA" className="h-24 w-24 object-contain" />
+  <span className="text-3xl font-bold tracking-tight text-primary">acapia</span>
+</a>
           <nav className="hidden gap-7 text-sm text-muted-foreground md:flex">
             <a href="#nosotros" className="hover:text-foreground">Nosotros</a>
             <a href="#servicios" className="hover:text-foreground">Servicios</a>
