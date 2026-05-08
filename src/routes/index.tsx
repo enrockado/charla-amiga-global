@@ -41,11 +41,11 @@ const EMAIL = "acapiaasociacioncivil@gmail.com";
 function Index() {
   return (
     <div className="min-h-screen bg-background text-foreground">
-      {/* Header con Logo extra grande */}
+      {/* Header con Logo extra grande y sin redundancia */}
       <header className="sticky top-0 z-40 border-b border-border/60 bg-background/80 backdrop-blur">
         <div className="mx-auto flex max-w-full items-center justify-between px-12 py-10">
           <a href="#top" className="flex items-center">
-            {/* Logo gigante */}
+            {/* Logo gigante (h-72) */}
             <img src={logoImg} alt="ACAPIA" className="h-72 w-72 object-contain" />
           </a>
           
@@ -65,7 +65,7 @@ function Index() {
         </div>
       </header>
 
-      {/* Hero */}
+      {/* Hero: Sin "ACAPIA -" en el título */}
       <section id="top" className="relative overflow-hidden">
         <div 
           className="absolute inset-0 -z-10 bg-cover bg-center opacity-40" 
@@ -103,11 +103,7 @@ function Index() {
             </div>
           </div>
           <div className="relative">
-            <img
-              src={heroImg}
-              alt="Acompañamiento terapéutico"
-              className="relative w-full rounded-3xl object-cover shadow-2xl"
-            />
+            <img src={heroImg} className="relative w-full rounded-3xl object-cover shadow-2xl" />
           </div>
         </div>
       </section>
@@ -119,9 +115,8 @@ function Index() {
           <h2 className="mt-3 text-4xl font-bold tracking-tight">Cuidado clínico, cercano y continuo</h2>
           <p className="mt-6 text-xl text-muted-foreground">
             Somos una asociación civil orientada a la atención en salud mental,
-            discapacidad y problemáticas vinculadas a consumos. Brindamos prestaciones personalizadas, 
-            con enfoque clínico comunitario y acompañamiento continuo, articulando con 
-            profesionales y redes de atención.
+            discapacidad y problemáticas vinculadas a consumos. Brindamos prestaciones 
+            con enfoque clínico comunitario y acompañamiento continuo.
           </p>
         </div>
       </section>
@@ -139,7 +134,7 @@ function Index() {
               { icon: Users, title: "Consumos problemáticos", desc: "Asistencia integral en situaciones de consumo." },
               { icon: CheckCircle2, title: "Obras sociales", desc: "Prestaciones en discapacidad y obras sociales." },
             ].map(({ icon: Icon, title, desc }) => (
-              <div key={title} className="bg-card p-8 rounded-2xl border border-border shadow-sm hover:shadow-md transition-all">
+              <div key={title} className="bg-card p-8 rounded-2xl border border-border shadow-sm">
                 <Icon className="h-10 w-10 text-primary mb-4" />
                 <h3 className="text-xl font-bold">{title}</h3>
                 <p className="mt-2 text-muted-foreground">{desc}</p>
@@ -157,15 +152,15 @@ function Index() {
             <p className="mt-6 text-xl text-muted-foreground">
               Entendemos el acompañamiento como un puente hacia la autonomía. 
               Trabajamos en el entorno habitual del paciente, coordinando con 
-              psiquiatras, psicólogos y familias para una atención 360°.
+              psiquiatras, psicólogos y familias.
             </p>
           </div>
           <div className="bg-accent/50 p-10 rounded-3xl">
             <h4 className="text-2xl font-bold mb-4">¿Cómo trabajamos?</h4>
             <ul className="space-y-4 text-lg">
-              <li className="flex gap-3"><CheckCircle2 className="text-primary shrink-0" /> Atención Domiciliaria</li>
-              <li className="flex gap-3"><CheckCircle2 className="text-primary shrink-0" /> Consultorio en CABA</li>
-              <li className="flex gap-3"><CheckCircle2 className="text-primary shrink-0" /> Supervisión Clínica Constante</li>
+              <li className="flex gap-3"><CheckCircle2 className="text-primary" /> Atención Domiciliaria</li>
+              <li className="flex gap-3"><CheckCircle2 className="text-primary" /> Consultorio en CABA</li>
+              <li className="flex gap-3"><CheckCircle2 className="text-primary" /> Supervisión Clínica Constante</li>
             </ul>
           </div>
         </div>
@@ -175,57 +170,66 @@ function Index() {
       <section id="proceso" className="bg-primary text-primary-foreground py-24">
         <div className="mx-auto max-w-6xl px-6 text-center">
           <h2 className="text-4xl font-bold mb-16">Proceso de Ingreso</h2>
-          <div className="grid md:grid-cols-3 gap-12">
+          <div className="grid md:grid-cols-3 gap-12 text-center">
             <div>
-              <div className="text-6xl font-black opacity-30 mb-4">01</div>
+              <div className="text-5xl font-black mb-4">01</div>
               <h3 className="text-2xl font-bold">Admisión</h3>
-              <p className="mt-2 opacity-90">Entrevista para conocer la situación y necesidades específicas.</p>
+              <p className="mt-2 opacity-90 text-lg">Entrevista inicial para conocer la situación.</p>
             </div>
             <div>
-              <div className="text-6xl font-black opacity-30 mb-4">02</div>
+              <div className="text-5xl font-black mb-4">02</div>
               <h3 className="text-2xl font-bold">Asignación</h3>
-              <p className="mt-2 opacity-90">Selección del profesional o equipo más adecuado para el caso.</p>
+              <p className="mt-2 opacity-90 text-lg">Selección del equipo adecuado.</p>
             </div>
             <div>
-              <div className="text-6xl font-black opacity-30 mb-4">03</div>
-              <h3 className="text-2xl font-bold">Seguimiento</h3>
-              <p className="mt-2 opacity-90">Inicio del plan terapéutico con informes y reuniones periódicas.</p>
+              <div className="text-5xl font-black mb-4">03</div>
+              <h3 className="text-2xl font-bold">Inicio</h3>
+              <p className="mt-2 opacity-90 text-lg">Seguimiento clínico continuo.</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Contacto Completo */}
+      {/* Contacto con Email restaurado */}
       <section id="contacto" className="py-24 mx-auto max-w-6xl px-6">
         <div className="grid md:grid-cols-2 gap-16">
           <div>
             <h2 className="text-4xl font-bold mb-8">Datos de Contacto</h2>
-            <div className="space-y-6">
-              <div className="flex items-center gap-4 text-xl">
-                <div className="h-12 w-12 bg-primary/10 rounded-full flex items-center justify-center">
-                  <Mail className="text-primary" />
+            <div className="space-y-8">
+              <div className="flex items-center gap-6">
+                <div className="h-14 w-14 bg-primary/10 rounded-full flex items-center justify-center">
+                  <Mail className="text-primary h-7 w-7" />
                 </div>
-                <a href={`mailto:${EMAIL}`} className="hover:underline">{EMAIL}</a>
+                <div className="flex flex-col">
+                  <span className="text-sm text-muted-foreground uppercase font-bold tracking-widest">Email</span>
+                  <a href={`mailto:${EMAIL}`} className="text-2xl font-medium hover:underline">{EMAIL}</a>
+                </div>
               </div>
-              <div className="flex items-center gap-4 text-xl">
-                <div className="h-12 w-12 bg-primary/10 rounded-full flex items-center justify-center">
-                  <Phone className="text-primary" />
+              <div className="flex items-center gap-6">
+                <div className="h-14 w-14 bg-primary/10 rounded-full flex items-center justify-center">
+                  <Phone className="text-primary h-7 w-7" />
                 </div>
-                <span>{WHATSAPP_DISPLAY}</span>
+                <div className="flex flex-col">
+                  <span className="text-sm text-muted-foreground uppercase font-bold tracking-widest">Teléfono</span>
+                  <span className="text-2xl font-medium">{WHATSAPP_DISPLAY}</span>
+                </div>
               </div>
-              <div className="flex items-center gap-4 text-xl">
-                <div className="h-12 w-12 bg-primary/10 rounded-full flex items-center justify-center">
-                  <Map_Pin className="text-primary" />
+              <div className="flex items-center gap-6">
+                <div className="h-14 w-14 bg-primary/10 rounded-full flex items-center justify-center">
+                  <MapPin className="text-primary h-7 w-7" />
                 </div>
-                <span>Atención en CABA y GBA</span>
+                <div className="flex flex-col">
+                  <span className="text-sm text-muted-foreground uppercase font-bold tracking-widest">Zona</span>
+                  <span className="text-2xl font-medium">CABA y GBA</span>
+                </div>
               </div>
             </div>
           </div>
-          <div className="text-center bg-card border p-10 rounded-3xl shadow-xl">
+          <div className="bg-card border p-12 rounded-3xl shadow-xl flex flex-col justify-center text-center">
             <h3 className="text-3xl font-bold mb-6">Solicitá una entrevista</h3>
-            <Button asChild size="lg" className="rounded-full px-12 py-8 text-2xl h-auto w-full">
+            <Button asChild size="lg" className="rounded-full px-12 py-8 text-2xl h-auto">
               <a href={`https://wa.me/${WHATSAPP}`} target="_blank" rel="noreferrer">
-                Escribinos por WhatsApp
+                Escribir por WhatsApp
               </a>
             </Button>
           </div>
@@ -233,10 +237,8 @@ function Index() {
       </section>
 
       <footer className="border-t py-12 text-center text-muted-foreground">
-        <div className="flex justify-center gap-6 mb-4">
-          <p>© {new Date().getFullYear()} ACAPIA · Asociación Civil</p>
-        </div>
-        <p className="text-xs uppercase tracking-widest">Salud Mental y Discapacidad — Ciudad Autónoma de Buenos Aires</p>
+        <p>© {new Date().getFullYear()} ACAPIA · Asociación Civil</p>
+        <p className="text-xs uppercase tracking-widest mt-2">Salud Mental y Discapacidad — CABA</p>
       </footer>
     </div>
   );
