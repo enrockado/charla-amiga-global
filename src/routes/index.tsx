@@ -58,18 +58,18 @@ const HeroSvg = () => (
 function Index() {
   return (
     <div className="min-h-screen bg-[#fafafc] text-foreground scroll-smooth">
-      {/* Header: Tamaño intermedio (h-40) y logo con recorte */}
+      {/* Header: Logo más equilibrado (h-24) y Menú más refinado */}
       <header className="sticky top-0 z-[100] border-b border-border/40 bg-white/80 backdrop-blur-md">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-8 py-2">
-          <a href="#top" className="flex items-center overflow-hidden h-40 transition-opacity hover:opacity-95">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-8 py-4">
+          <a href="#top" className="flex items-center transition-opacity hover:opacity-90">
             <img 
               src={logoImg} 
               alt="ACAPIA" 
-              className="h-56 w-auto object-contain object-top" 
+              className="h-24 w-auto object-contain" 
             />
           </a>
           
-          <nav className="hidden gap-10 text-xl font-bold text-slate-700 md:flex">
+          <nav className="hidden gap-10 text-lg font-semibold text-slate-700 md:flex">
             <a href="#nosotros" className="hover:text-primary transition-colors">Nosotros</a>
             <a href="#servicios" className="hover:text-primary transition-colors">Servicios</a>
             <a href="#modalidad" className="hover:text-primary transition-colors">Modalidad</a>
@@ -77,7 +77,7 @@ function Index() {
             <a href="#contacto" className="hover:text-primary transition-colors">Contacto</a>
           </nav>
 
-          <Button asChild className="rounded-full font-bold px-10 py-7 h-auto text-xl shadow-md hover:shadow-lg transition-all">
+          <Button asChild className="rounded-full font-bold px-8 py-6 h-auto text-lg shadow-md hover:shadow-lg transition-all">
             <a href={`https://wa.me/${WHATSAPP}`} target="_blank" rel="noreferrer">
               WhatsApp
             </a>
@@ -111,7 +111,82 @@ function Index() {
         </div>
       </section>
 
-      {/* Nosotros */}
+      {/* Nosotros: Texto con ancho de lectura óptimo */}
       <section id="nosotros" className="scroll-mt-32 py-32 bg-[#fafafc]">
         <div className="mx-auto max-w-4xl px-8 text-center">
-          <p className="text-sm font-bold uppercase tracking-[0.2em]
+          <p className="text-sm font-bold uppercase tracking-[0.2em] text-primary/70 mb-4">Trayectoria Solidaria</p>
+          <h2 className="text-4xl font-extrabold text-slate-900 mb-10">Quiénes Somos</h2>
+          <p className="text-2xl text-slate-600 leading-relaxed font-light">
+            Somos una Asociación Civil constituida en el año 2013. Brindamos atención en salud mental, discapacidad y problemáticas vinculadas a consumos. Ofrecemos prestaciones personalizadas, con enfoque clínico comunitario y acompañamiento continuo, articulando con profesionales y redes de atención.
+          </p>
+        </div>
+      </section>
+
+      {/* Servicios: Diseño más limpio */}
+      <section id="servicios" className="scroll-mt-32 bg-white py-32">
+        <div className="mx-auto max-w-7xl px-8">
+          <h2 className="text-4xl font-extrabold text-center text-slate-900 mb-20">Nuestros Servicios</h2>
+          <div className="grid gap-8 md:grid-cols-3">
+            {[
+              { title: "Acompañamiento", desc: "AT domiciliario y ambulatorio planificado bajo estricto seguimiento clínico.", icon: <Home className="h-8 w-8" /> },
+              { title: "Psicoterapia", desc: "Abordajes individuales adaptados a la singularidad de cada paciente.", icon: <Heart className="h-8 w-8" /> },
+              { title: "Obras Sociales", desc: "Gestión y cobertura mediante prestaciones especializadas en discapacidad.", icon: <CheckCircle2 className="h-8 w-8" /> }
+            ].map((s, i) => (
+              <div key={i} className="group p-10 rounded-3xl border border-slate-100 bg-white shadow-sm hover:shadow-xl transition-all hover:-translate-y-2">
+                <div className="mb-6 inline-flex p-4 rounded-2xl bg-primary/5 text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+                  {s.icon}
+                </div>
+                <h3 className="text-2xl font-bold mb-4 text-slate-800">{s.title}</h3>
+                <p className="text-lg text-slate-500 leading-relaxed">{s.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Contacto: Estilo más suave */}
+      <section id="contacto" className="scroll-mt-32 py-32 bg-slate-900 text-white">
+        <div className="mx-auto max-w-7xl px-8">
+          <div className="grid md:grid-cols-2 gap-20 items-center">
+            <div className="space-y-10">
+              <h2 className="text-5xl font-bold">Iniciemos una conversación</h2>
+              <div className="space-y-8">
+                <div className="flex items-center gap-6">
+                  <div className="p-4 rounded-full bg-white/10"><Mail className="h-6 w-6 text-primary-foreground" /></div>
+                  <div>
+                    <p className="text-sm font-bold opacity-50 uppercase tracking-widest">Email institucional</p>
+                    <a href={`mailto:${EMAIL}`} className="text-xl hover:text-primary transition-colors">{EMAIL}</a>
+                  </div>
+                </div>
+                <div className="flex items-center gap-6">
+                  <div className="p-4 rounded-full bg-white/10"><Phone className="h-6 w-6 text-primary-foreground" /></div>
+                  <div>
+                    <p className="text-sm font-bold opacity-50 uppercase tracking-widest">WhatsApp</p>
+                    <p className="text-2xl font-bold">{WHATSAPP_DISPLAY}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="bg-white rounded-[40px] p-12 text-slate-900 shadow-2xl">
+              <h3 className="text-3xl font-bold mb-6 text-center">Entrevistas de Admisión</h3>
+              <p className="text-slate-500 text-center mb-8 text-lg">Coordinamos un encuentro inicial para evaluar cada caso.</p>
+              <Button asChild className="w-full rounded-full py-8 text-xl font-bold h-auto">
+                <a href={`https://wa.me/${WHATSAPP}`} target="_blank" rel="noreferrer">
+                  Agendar por WhatsApp
+                </a>
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="py-16 text-center border-t border-slate-100 bg-white">
+        <p className="text-xl font-bold text-slate-900 mb-3">© 2013 ACAPIA</p>
+        <p className="text-slate-400 text-sm max-w-2xl mx-auto italic px-6">
+          Asociación Civil para la Asistencia, Prevención, Investigación y Acompañamiento en Salud Mental y problemáticas asociadas
+        </p>
+      </footer>
+    </div>
+  );
+}
