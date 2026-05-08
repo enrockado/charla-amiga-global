@@ -36,7 +36,7 @@ export const Route = createFileRoute("/")({
 
 const WHATSAPP = "541137914461";
 const WHATSAPP_DISPLAY = "011 3791-4461";
-const EMAIL = "acapia@acapia.com.ar";
+const EMAIL = "acapiaasociacioncivil@gmail.com";
 
 function Index() {
   return (
