@@ -41,16 +41,16 @@ const EMAIL = "acapiaasociacioncivil@gmail.com";
 function Index() {
   return (
     <div className="min-h-screen bg-background text-foreground">
-      {/* Header con solo Logo */}
+      {/* Header escalado un 30% más */}
       <header className="sticky top-0 z-40 border-b border-border/60 bg-background/80 backdrop-blur">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+        <div className="mx-auto flex max-w-full items-center justify-between px-12 py-10">
           <a href="#top" className="flex items-center">
-            {/* Logo protagonista */}
-            <img src={logoImg} alt="ACAPIA" className="h-44 w-44 object-contain" />
+            {/* Logo un 30% más grande (de 44 a 56) */}
+            <img src={logoImg} alt="ACAPIA" className="h-56 w-56 object-contain" />
           </a>
           
-          {/* Menú en negrita y tamaño claro */}
-          <nav className="hidden gap-10 text-xl font-bold text-foreground md:flex">
+          {/* Menú un 30% más grande (de xl a 3xl) y con más separación */}
+          <nav className="hidden gap-14 text-3xl font-black text-foreground md:flex">
             <a href="#nosotros" className="hover:text-primary transition-colors">Nosotros</a>
             <a href="#servicios" className="hover:text-primary transition-colors">Servicios</a>
             <a href="#modalidad" className="hover:text-primary transition-colors">Modalidad</a>
@@ -58,8 +58,8 @@ function Index() {
             <a href="#contacto" className="hover:text-primary transition-colors">Contacto</a>
           </nav>
 
-          {/* Botón de WhatsApp */}
-          <Button asChild className="rounded-full text-lg font-bold px-8 py-6 h-auto">
+          {/* Botón de WhatsApp más robusto */}
+          <Button asChild className="rounded-full text-2xl font-black px-12 py-8 h-auto">
             <a href={`https://wa.me/${WHATSAPP}`} target="_blank" rel="noreferrer">
               WhatsApp
             </a>
@@ -115,7 +115,7 @@ function Index() {
         </div>
       </section>
 
-      {/* Nosotros */}
+      {/* El resto del código de las secciones se mantiene igual */}
       <section id="nosotros" className="mx-auto max-w-6xl px-6 py-20">
         <div className="mx-auto max-w-3xl text-center">
           <p className="text-sm font-medium uppercase tracking-wider text-primary">
@@ -133,7 +133,6 @@ function Index() {
         </div>
       </section>
 
-      {/* Servicios */}
       <section id="servicios" className="bg-secondary/40 py-20">
         <div className="mx-auto max-w-6xl px-6">
           <div className="mx-auto max-w-2xl text-center">
@@ -146,7 +145,7 @@ function Index() {
               { icon: Home, title: "Acompañamiento Terapéutico", desc: "AT domiciliario sostenido y planificado clínicamente." },
               { icon: Heart, title: "Psicoterapia individual", desc: "Espacios terapéuticos adaptados a cada persona." },
               { icon: Stethoscope, title: "Intervenciones en salud mental", desc: "Abordajes integrales y articulados con el equipo tratante." },
-              { icon: ClipboardList, title: "Atención ambulatoria", desc: "Consultorio propio para atención ambulatoria y seguimiento." },
+              { icon: ClipboardList, title: "Atención ambulatoria", desc: "Consultorio propio para atención ambulatoria y seguimiento clínico." },
               { icon: Users, title: "Consumos problemáticos", desc: "Asistencia integral en situaciones de consumo." },
               { icon: CheckCircle2, title: "Obras sociales", desc: "Trabajamos con prestaciones en discapacidad." },
             ].map(({ icon: Icon, title, desc }) => (
@@ -162,7 +161,6 @@ function Index() {
         </div>
       </section>
 
-      {/* Footer */}
       <footer className="border-t border-border/60">
         <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-3 px-6 py-8 text-sm text-muted-foreground md:flex-row">
           <p>© {new Date().getFullYear()} ACAPIA · Asociación Civil</p>
