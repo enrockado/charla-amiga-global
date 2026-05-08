@@ -41,18 +41,16 @@ const EMAIL = "acapiaasociacioncivil@gmail.com";
 function Index() {
   return (
     <div className="min-h-screen bg-background text-foreground">
-      {/* Header Ajustado */}
+      {/* Header con solo Logo */}
       <header className="sticky top-0 z-40 border-b border-border/60 bg-background/80 backdrop-blur">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-6">
-          <a href="#top" className="flex items-center gap-4">
-            {/* Logo se mantiene en 48 para que destaque */}
-            <img src={logoImg} alt="ACAPIA" className="h-48 w-48 object-contain" />
-            {/* La palabra acapia ahora es más chica (4xl) */}
-            <span className="text-4xl font-bold tracking-tight text-primary">acapia</span>
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+          <a href="#top" className="flex items-center">
+            {/* Logo protagonista */}
+            <img src={logoImg} alt="ACAPIA" className="h-44 w-44 object-contain" />
           </a>
           
-          {/* Menú más chico (xl) pero sigue en negrita */}
-          <nav className="hidden gap-8 text-xl font-bold text-foreground md:flex">
+          {/* Menú en negrita y tamaño claro */}
+          <nav className="hidden gap-10 text-xl font-bold text-foreground md:flex">
             <a href="#nosotros" className="hover:text-primary transition-colors">Nosotros</a>
             <a href="#servicios" className="hover:text-primary transition-colors">Servicios</a>
             <a href="#modalidad" className="hover:text-primary transition-colors">Modalidad</a>
@@ -60,7 +58,7 @@ function Index() {
             <a href="#contacto" className="hover:text-primary transition-colors">Contacto</a>
           </nav>
 
-          {/* Botón de WhatsApp más equilibrado */}
+          {/* Botón de WhatsApp */}
           <Button asChild className="rounded-full text-lg font-bold px-8 py-6 h-auto">
             <a href={`https://wa.me/${WHATSAPP}`} target="_blank" rel="noreferrer">
               WhatsApp
@@ -117,7 +115,7 @@ function Index() {
         </div>
       </section>
 
-      {/* Secciones de contenido */}
+      {/* Nosotros */}
       <section id="nosotros" className="mx-auto max-w-6xl px-6 py-20">
         <div className="mx-auto max-w-3xl text-center">
           <p className="text-sm font-medium uppercase tracking-wider text-primary">
@@ -135,6 +133,7 @@ function Index() {
         </div>
       </section>
 
+      {/* Servicios */}
       <section id="servicios" className="bg-secondary/40 py-20">
         <div className="mx-auto max-w-6xl px-6">
           <div className="mx-auto max-w-2xl text-center">
@@ -147,6 +146,29 @@ function Index() {
               { icon: Home, title: "Acompañamiento Terapéutico", desc: "AT domiciliario sostenido y planificado clínicamente." },
               { icon: Heart, title: "Psicoterapia individual", desc: "Espacios terapéuticos adaptados a cada persona." },
               { icon: Stethoscope, title: "Intervenciones en salud mental", desc: "Abordajes integrales y articulados con el equipo tratante." },
-              { icon: ClipboardList, title: "Atención ambulatoria", desc: "Consultorio propio para entrevistas y seguimiento clínico." },
+              { icon: ClipboardList, title: "Atención ambulatoria", desc: "Consultorio propio para atención ambulatoria y seguimiento." },
               { icon: Users, title: "Consumos problemáticos", desc: "Asistencia integral en situaciones de consumo." },
-              { icon: CheckCircle2, title: "Obras sociales", desc: "Prestaciones en discapacidad y obras sociales." },
+              { icon: CheckCircle2, title: "Obras sociales", desc: "Trabajamos con prestaciones en discapacidad." },
+            ].map(({ icon: Icon, title, desc }) => (
+              <div key={title} className="group rounded-2xl border border-border bg-card p-6 shadow-sm hover:shadow-md transition-all">
+                <div className="grid h-11 w-11 place-items-center rounded-xl bg-accent text-accent-foreground">
+                  <Icon className="h-5 w-5" />
+                </div>
+                <h3 className="mt-5 text-lg font-semibold">{title}</h3>
+                <p className="mt-2 text-sm text-muted-foreground">{desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="border-t border-border/60">
+        <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-3 px-6 py-8 text-sm text-muted-foreground md:flex-row">
+          <p>© {new Date().getFullYear()} ACAPIA · Asociación Civil</p>
+          <p>Atención en Salud Mental y Discapacidad — CABA</p>
+        </div>
+      </footer>
+    </div>
+  );
+}
