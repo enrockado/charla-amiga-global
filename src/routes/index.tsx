@@ -41,21 +41,21 @@ const EMAIL = "acapiaasociacioncivil@gmail.com";
 function Index() {
   return (
     <div className="min-h-screen bg-background text-foreground">
-      {/* Header */}
+      {/* Header Gigante */}
       <header className="sticky top-0 z-40 border-b border-border/60 bg-background/80 backdrop-blur">
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-          <a href="#top" className="flex items-center gap-2.5">
-  <img src={logoImg} alt="ACAPIA" className="h-70 w-70 object-contain" />
-<span className="text-9xl font-bold tracking-tight text-primary">acapia</span>
-</a>
-          <nav className="hidden gap-7 text-sm text-muted-foreground md:flex">
-            <a href="#nosotros" className="hidden gap-16 text-5xl font-black text-foreground md:flex">
-            <a href="#servicios" className="hover:text-foreground">Servicios</a>
-            <a href="#modalidad" className="hover:text-foreground">Modalidad</a>
-            <a href="#proceso" className="hover:text-foreground">Proceso</a>
-            <a href="#contacto" className="hover:text-foreground">Contacto</a>
+        <div className="mx-auto flex max-w-full items-center justify-between px-10 py-16">
+          <a href="#top" className="flex items-center gap-6">
+            <img src={logoImg} alt="ACAPIA" className="h-80 w-80 object-contain" />
+            <span className="text-9xl font-bold tracking-tight text-primary">acapia</span>
+          </a>
+          <nav className="hidden gap-12 text-5xl font-black text-foreground md:flex">
+            <a href="#nosotros" className="hover:text-primary">Nosotros</a>
+            <a href="#servicios" className="hover:text-primary">Servicios</a>
+            <a href="#modalidad" className="hover:text-primary">Modalidad</a>
+            <a href="#proceso" className="hover:text-primary">Proceso</a>
+            <a href="#contacto" className="hover:text-primary">Contacto</a>
           </nav>
-         <Button asChild className="rounded-full text-4xl font-black px-12 py-16 h-auto">
+          <Button asChild className="rounded-full text-4xl font-black px-12 py-16 h-auto">
             <a href={`https://wa.me/${WHATSAPP}`} target="_blank" rel="noreferrer">
               WhatsApp
             </a>
@@ -63,9 +63,12 @@ function Index() {
         </div>
       </header>
 
-      {/* Hero */}
+      {/* Hero con tu Imagen de Fondo */}
       <section id="top" className="relative overflow-hidden">
-        <div className="absolute inset-0 -z-10 bg-[image:var(--gradient-warm)] opacity-80" />
+        <div 
+          className="absolute inset-0 -z-10 bg-cover bg-center opacity-50" 
+          style={{ backgroundImage: `url(${heroImg})` }} 
+        />
         <div className="mx-auto grid max-w-6xl items-center gap-12 px-6 py-20 md:grid-cols-2 md:py-28">
           <div>
             <span className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-3 py-1 text-xs font-medium text-muted-foreground">
@@ -108,6 +111,7 @@ function Index() {
         </div>
       </section>
 
+      {/* El resto del código permanece igual para no romper las secciones inferiores */}
       {/* Nosotros */}
       <section id="nosotros" className="mx-auto max-w-6xl px-6 py-20">
         <div className="mx-auto max-w-3xl text-center">
