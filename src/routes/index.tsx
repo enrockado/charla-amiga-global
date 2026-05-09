@@ -31,7 +31,6 @@ const WHATSAPP = "541137914461";
 const WHATSAPP_DISPLAY = "011 3791-4461";
 const EMAIL = "acapiaasociacioncivil@gmail.com";
 
-// GRÁFICO RESTITUIDO: ACOMPAÑAMOS, Incluimos, TRANSFORMAMOS
 const HeroSvg = () => (
   <svg width="380" height="320" viewBox="0 0 380 320" xmlns="http://www.w3.org/2000/svg" className="w-full h-auto max-w-[450px] drop-shadow-xl">
     <rect width="380" height="320" rx="24" fill="#f0eef8"/>
@@ -49,7 +48,6 @@ function Index() {
   return (
     <div className="min-h-screen bg-white text-foreground scroll-smooth font-sans">
       
-      {/* Header: LOGO TAL CUAL ESTABA (Importante) */}
       <header className="sticky top-0 z-[100] border-b border-slate-200/60 bg-[#f8f9ff]/95 backdrop-blur-md shadow-sm">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-10 py-2">
           
@@ -63,7 +61,8 @@ function Index() {
             </a>
           </div>
           
-          <nav className="hidden gap-10 text-lg font-bold text-slate-800 md:flex">
+          {/* Navegación: Tamaño aumentado a text-xl */}
+          <nav className="hidden gap-10 text-xl font-bold text-slate-800 md:flex">
             <a href="#nosotros" className="hover:text-primary transition-colors">Nosotros</a>
             <a href="#servicios" className="hover:text-primary transition-colors">Servicios</a>
             <a href="#modalidad" className="hover:text-primary transition-colors">Modalidad</a>
@@ -82,16 +81,16 @@ function Index() {
         </div>
       </header>
 
-      {/* Hero: Texto simplificado y gráfico restituido */}
+      {/* Hero: Discapacidad con menos negrita y Atención con A mayúscula */}
       <section id="top" className="relative bg-gradient-to-b from-[#f8f9ff] to-white py-24">
         <div className="mx-auto grid max-w-6xl items-center gap-16 px-6 md:grid-cols-2">
           <div>
             <h1 className="text-5xl font-bold leading-tight text-slate-900">
               Atención en <br />
-              <span className="text-primary italic">Salud Mental</span> y Discapacidad
+              <span className="text-primary italic">Salud Mental</span> y <span className="font-normal">Discapacidad</span>
             </h1>
             <p className="mt-8 text-2xl text-slate-500 font-light leading-relaxed">
-              atención domiciliaria y ambulatoria.
+              Atención domiciliaria y ambulatoria.
             </p>
             <div className="mt-12 flex gap-4">
               <Button asChild size="lg" className="rounded-full px-10 py-7 text-xl font-bold shadow-xl">
@@ -105,19 +104,18 @@ function Index() {
         </div>
       </section>
 
-      {/* Quiénes Somos: Texto corregido a enfoque clínico-comunitario */}
+      {/* Quiénes Somos: Texto con agregado de articulación */}
       <section id="nosotros" className="py-32 bg-white scroll-mt-20">
         <div className="mx-auto max-w-4xl px-6 text-center">
           <h2 className="text-4xl font-bold text-slate-900 mb-8 italic">Quiénes Somos</h2>
           <p className="text-2xl text-slate-600 leading-relaxed font-light">
             Somos una Asociación Civil constituida en el año 2013. Brindamos atención en 
-            salud mental, discapacidad y problemáticas vinculadas a consumos. 
+            salud mental, discapacidad y problemáticas vinculadas a consumos, articulando con profesionales y redes de atención. 
             Ofrecemos prestaciones personalizadas con enfoque clínico-comunitario.
           </p>
         </div>
       </section>
 
-      {/* Servicios: Textos exactos solicitados */}
       <section id="servicios" className="py-32 bg-slate-50 scroll-mt-20">
         <div className="mx-auto max-w-6xl px-6">
           <h2 className="text-4xl font-bold text-center mb-20 text-slate-900">Servicios</h2>
@@ -175,13 +173,14 @@ function Index() {
         </div>
       </section>
 
+      {/* Proceso: Asignación actualizada */}
       <section id="proceso" className="py-32 bg-[#f8f9ff] scroll-mt-20">
         <div className="mx-auto max-w-6xl px-6 text-center">
           <h2 className="text-4xl font-bold text-slate-900 mb-20">Proceso de Trabajo</h2>
           <div className="grid md:grid-cols-3 gap-12 relative">
             {[
               { n: "1", t: "Admisión", d: "Entrevista inicial para conocer la demanda." },
-              { n: "2", t: "Asignación", d: "Selección del profesional según el perfil." },
+              { n: "2", t: "Asignación", d: "Selección del equipo o profesional según el perfil." },
               { n: "3", t: "Implementación", d: "Inicio del plan terapéutico y seguimiento." }
             ].map((step, i) => (
               <div key={i} className="relative group">
@@ -219,33 +218,4 @@ function Index() {
                 <div className="flex items-center gap-6">
                   <MapPin className="text-primary h-8 w-8" />
                   <div>
-                    <p className="text-xs font-bold uppercase text-slate-400 tracking-widest">Atención</p>
-                    <p className="text-2xl font-semibold text-slate-800">CABA y Gran Buenos Aires</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="bg-slate-50 p-12 rounded-[40px] border border-slate-200 flex flex-col justify-center">
-              <h3 className="text-2xl font-bold mb-6 text-center italic">Solicitá una entrevista</h3>
-              <Button asChild className="w-full rounded-full py-8 text-xl font-bold h-auto shadow-lg bg-[#1e2d6b]">
-                <a href={`https://wa.me/${WHATSAPP}`} target="_blank" rel="noreferrer">
-                  Enviar Mensaje Directo
-                </a>
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <footer className="py-20 bg-slate-900 text-white/50 text-center">
-        <div className="mx-auto max-w-6xl px-6">
-          <h3 className="text-2xl font-bold text-white mb-4">© 2013 ACAPIA</h3>
-          <p className="uppercase text-[10px] tracking-[0.3em] font-bold mb-8">Salud Mental y Discapacidad</p>
-          <p className="text-sm italic max-w-2xl mx-auto border-t border-white/10 pt-8">
-            Asociación Civil para la Asistencia, Prevención, Investigación y Acompañamiento en Salud Mental.
-          </p>
-        </div>
-      </footer>
-    </div>
-  );
-}
+                    <p className="text-xs font-bold uppercase text-slate-400 tracking-
