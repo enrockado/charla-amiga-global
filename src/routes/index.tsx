@@ -31,7 +31,7 @@ const WHATSAPP = "541137914461";
 const WHATSAPP_DISPLAY = "011 3791-4461";
 const EMAIL = "acapiaasociacioncivil@gmail.com";
 
-// Componente de imagen del Hero restaurado con el diseño y palabras originales
+// Gráfico Hero restaurado con las 3 palabras clave
 const HeroSvg = () => (
   <svg width="380" height="320" viewBox="0 0 380 320" xmlns="http://www.w3.org/2000/svg" className="w-full h-auto max-w-[450px] drop-shadow-xl">
     <rect width="380" height="320" rx="24" fill="#f0eef8"/>
@@ -49,7 +49,7 @@ function Index() {
   return (
     <div className="min-h-screen bg-white text-foreground scroll-smooth font-sans">
       
-      {/* HEADER: Logo ampliado y navegación */}
+      {/* HEADER: Logo +15%, Nav Centrada y Botón WhatsApp Premium */}
       <header className="sticky top-0 z-[100] border-b border-slate-200/60 bg-[#f8f9ff]/95 backdrop-blur-md shadow-sm">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-10 py-2">
           
@@ -58,7 +58,7 @@ function Index() {
               <img 
                 src={logoImg} 
                 alt="ACAPIA" 
-                className="h-[185px] w-auto object-contain pointer-events-none" 
+                className="h-[175px] w-auto object-contain pointer-events-none" 
               />
             </a>
           </div>
@@ -82,7 +82,7 @@ function Index() {
         </div>
       </header>
 
-      {/* HERO: Incluye 'ambulatoria' */}
+      {/* HERO: Texto con 'ambulatoria' y SVG restaurado */}
       <section id="top" className="relative pt-12 bg-gradient-to-b from-[#f8f9ff] to-white">
         <div className="mx-auto grid max-w-6xl items-center gap-20 px-6 py-20 md:grid-cols-2">
           <div>
@@ -93,7 +93,7 @@ function Index() {
               </span>
             </h1>
             <p className="mt-8 text-2xl text-slate-500 font-light leading-relaxed">
-              Acompañamiento Terapéutico y Psicoterapia con atención domiciliaria y ambulatoria.
+              Acompañamiento Terapéutico y Psicoterapia con atención domiciliaria y **ambulatoria**.
             </p>
             <div className="mt-12">
               <Button asChild size="lg" className="rounded-full px-12 py-8 text-xl h-auto font-bold shadow-lg hover:-translate-y-1 transition-transform">
@@ -109,7 +109,7 @@ function Index() {
         </div>
       </section>
 
-      {/* NOSOTROS: Texto original restaurado íntegramente */}
+      {/* NOSOTROS: Texto original restaurado */}
       <section id="nosotros" className="scroll-mt-[150px] py-32 mx-auto max-w-4xl px-6 text-center">
         <p className="text-sm font-bold uppercase tracking-widest text-primary/70 mb-4">Desde 2013</p>
         <h2 className="text-5xl font-bold text-slate-900 mb-8 tracking-tight italic">Quiénes Somos</h2>
@@ -118,27 +118,27 @@ function Index() {
         </p>
       </section>
 
-      {/* SERVICIOS: Incluye 'ambulatorio' */}
+      {/* SERVICIOS: Con 'ambulatorio' */}
       <section id="servicios" className="scroll-mt-[150px] bg-secondary/10 py-32">
         <div className="mx-auto max-w-6xl px-6 text-center">
           <h2 className="text-5xl font-bold text-slate-900 mb-20 tracking-tight">Servicios</h2>
           <div className="grid gap-10 md:grid-cols-3 text-left">
             {[
-              { title: "Acompañamiento", icon: <Home className="h-10 w-10" />, desc: "AT domiciliario y ambulatorio planificado bajo seguimiento clínico y supervisión permanente." },
+              { title: "Acompañamiento", icon: <Home className="h-10 w-10" />, desc: "AT domiciliario y **ambulatorio** planificado bajo seguimiento clínico y supervisión permanente." },
               { title: "Psicoterapia", icon: <Heart className="h-10 w-10" />, desc: "Abordajes individuales y grupales adaptados a la singularidad de cada paciente." },
               { title: "Obras Sociales", icon: <CheckCircle2 className="h-10 w-10" />, desc: "Gestión y orientación para la cobertura de prestaciones básicas obligatorias en discapacidad." }
             ].map((s, i) => (
               <div key={i} className="bg-white p-10 rounded-[32px] border border-slate-100 shadow-sm">
                 <div className="text-primary mb-6 flex justify-center">{s.icon}</div>
                 <h3 className="text-2xl font-bold mb-4 text-slate-800 text-center">{s.title}</h3>
-                <p className="text-lg text-slate-500 font-light leading-snug text-center">{s.desc}</p>
+                <p className="text-lg text-slate-500 font-light leading-snug">{s.desc}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* MODALIDAD */}
+      {/* MODALIDAD COMPLETA */}
       <section id="modalidad" className="scroll-mt-[150px] py-32 mx-auto max-w-6xl px-6">
         <div className="grid md:grid-cols-2 gap-20 items-center">
           <div>
@@ -151,7 +151,7 @@ function Index() {
               </div>
               <div className="flex gap-4 items-start">
                 <ClipboardList className="text-primary h-6 w-6 mt-1 flex-shrink-0" />
-                <p><span className="font-bold text-slate-800">Supervisión Clínica:</span> Todos nuestros procesos cuentan con monitoreo permanente para asegurar la calidad ética.</p>
+                <p><span className="font-bold text-slate-800">Supervisión Clínica:</span> Monitoreo permanente para asegurar la calidad ética y terapéutica.</p>
               </div>
             </div>
           </div>
@@ -166,15 +166,15 @@ function Index() {
         </div>
       </section>
 
-      {/* PROCESO */}
+      {/* PROCESO COMPLETO */}
       <section id="proceso" className="scroll-mt-[150px] bg-[#f8f9ff] py-32">
         <div className="mx-auto max-w-6xl px-6 text-center">
           <h2 className="text-5xl font-bold text-slate-900 mb-20 tracking-tight">Proceso de Ingreso</h2>
-          <div className="grid md:grid-cols-3 gap-16 relative">
+          <div className="grid md:grid-cols-3 gap-16">
             {[
-              { num: "01", t: "Admisión", d: "Entrevista inicial para conocer la demanda y definir objetivos." },
+              { num: "01", t: "Admisión", d: "Entrevista inicial para evaluar el caso y definir objetivos." },
               { num: "02", t: "Asignación", d: "Selección del profesional idóneo según el perfil del paciente." },
-              { num: "03", t: "Implementación", d: "Inicio del plan terapéutico y seguimiento clínico continuo." }
+              { num: "03", t: "Inicio", d: "Implementación del plan de trabajo y seguimiento clínico." }
             ].map((p, i) => (
               <div key={i} className="relative group">
                 <span className="text-8xl font-black text-slate-200 absolute -top-10 left-1/2 -translate-x-1/2 group-hover:text-primary/10 transition-colors">{p.num}</span>
@@ -186,7 +186,7 @@ function Index() {
         </div>
       </section>
 
-      {/* CONTACTO: Incluye Email Corporativo */}
+      {/* CONTACTO: Con Mail y WhatsApp Display */}
       <section id="contacto" className="scroll-mt-[150px] py-40 mx-auto max-w-6xl px-6">
         <div className="grid md:grid-cols-2 gap-20">
           <div className="space-y-12">
@@ -195,7 +195,7 @@ function Index() {
               <div className="flex items-center gap-6">
                 <div className="bg-primary/10 p-4 rounded-full"><Mail className="text-primary h-8 w-8" /></div>
                 <div className="flex flex-col">
-                  <span className="text-xs font-bold uppercase text-slate-400 tracking-[0.2em]">Email Corporativo</span>
+                  <span className="text-xs font-bold uppercase text-slate-400 tracking-[0.2em]">Email</span>
                   <a href={`mailto:${EMAIL}`} className="text-2xl hover:text-primary font-bold text-slate-800 transition-colors break-all">{EMAIL}</a>
                 </div>
               </div>
@@ -209,7 +209,7 @@ function Index() {
               <div className="flex items-center gap-6">
                 <div className="bg-primary/10 p-4 rounded-full"><MapPin className="text-primary h-8 w-8" /></div>
                 <div className="flex flex-col">
-                  <span className="text-xs font-bold uppercase text-slate-400 tracking-[0.2em]">Cobertura</span>
+                  <span className="text-xs font-bold uppercase text-slate-400 tracking-[0.2em]">Área de cobertura</span>
                   <span className="text-2xl font-bold text-slate-800">CABA y Gran Buenos Aires</span>
                 </div>
               </div>
@@ -219,7 +219,7 @@ function Index() {
             <h3 className="text-3xl font-bold mb-8 text-slate-900">Solicitá una entrevista de admisión</h3>
             <Button asChild className="w-full rounded-full py-9 text-2xl font-bold h-auto shadow-lg bg-[#1e2d6b]">
               <a href={`https://wa.me/${WHATSAPP}`} target="_blank" rel="noreferrer">
-                Enviar Mensaje Directo
+                Enviar Mensaje
               </a>
             </Button>
           </div>
@@ -229,9 +229,8 @@ function Index() {
       {/* FOOTER */}
       <footer className="py-20 bg-slate-900 text-white/50 text-center">
         <p className="text-2xl font-bold text-white mb-2">© 2013 ACAPIA</p>
-        <p className="uppercase tracking-[0.3em] text-[10px] font-bold mb-8">Salud Mental y Discapacidad</p>
-        <p className="text-sm italic max-w-2xl mx-auto border-t border-white/10 pt-8 px-6">
-          Asociación Civil para la Asistencia, Prevención, Investigación y Acompañamiento en Salud Mental.
+        <p className="uppercase tracking-[0.15em] text-xs font-medium max-w-3xl mx-auto px-6 italic leading-relaxed">
+          Asociación Civil para la Asistencia, Prevención, Investigación y Acompañamiento en Salud Mental
         </p>
       </footer>
     </div>
