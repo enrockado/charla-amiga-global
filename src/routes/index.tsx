@@ -11,7 +11,6 @@ import {
   CheckCircle2,
   Users,
   ClipboardList,
-  ArrowRight,
 } from "lucide-react";
 
 export const Route = createFileRoute("/")({
@@ -32,15 +31,28 @@ const WHATSAPP = "541137914461";
 const WHATSAPP_DISPLAY = "011 3791-4461";
 const EMAIL = "acapiaasociacioncivil@gmail.com";
 
+// GRÁFICO RESTITUIDO: ACOMPAÑAMOS, Incluimos, TRANSFORMAMOS
+const HeroSvg = () => (
+  <svg width="380" height="320" viewBox="0 0 380 320" xmlns="http://www.w3.org/2000/svg" className="w-full h-auto max-w-[450px] drop-shadow-xl">
+    <rect width="380" height="320" rx="24" fill="#f0eef8"/>
+    <line x1="60" y1="40" x2="60" y2="280" stroke="#1e2d6b" strokeWidth="2.5" opacity="0.15" strokeLinecap="round"/>
+    <circle cx="60" cy="90" r="9" fill="#1e2d6b" opacity="0.25"/>
+    <text x="86" y="84" fontFamily="Inter, sans-serif" fontSize="10" fontWeight="300" fill="#1e2d6b" opacity="0.45" letterSpacing="3">ACOMPAÑAMOS</text>
+    <circle cx="60" cy="165" r="11" fill="#e87c2e" opacity="0.18"/>
+    <text x="86" y="171" fontFamily="Inter, sans-serif" fontSize="22" fontWeight="600" fill="#1e2d6b" opacity="0.72">Incluimos</text>
+    <line x1="86" y1="183" x2="290" y2="183" stroke="#e87c2e" strokeWidth="1" opacity="0.2"/>
+    <text x="86" y="236" fontFamily="Inter, sans-serif" fontSize="10" fontWeight="300" fill="#e87c2e" opacity="0.6" letterSpacing="3">TRANSFORMAMOS</text>
+  </svg>
+);
+
 function Index() {
   return (
     <div className="min-h-screen bg-white text-foreground scroll-smooth font-sans">
       
-      {/* Header Premium con elementos agrupados al centro */}
+      {/* Header: LOGO TAL CUAL ESTABA (Importante) */}
       <header className="sticky top-0 z-[100] border-b border-slate-200/60 bg-[#f8f9ff]/95 backdrop-blur-md shadow-sm">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-10 py-2">
           
-          {/* Logo: Tamaño +15% y Recorte Forzado de las letras inferiores */}
           <div className="flex items-center flex-1">
             <a href="#top" className="block overflow-hidden h-[155px]"> 
               <img 
@@ -51,7 +63,6 @@ function Index() {
             </a>
           </div>
           
-          {/* Navegación Centrada */}
           <nav className="hidden gap-10 text-lg font-bold text-slate-800 md:flex">
             <a href="#nosotros" className="hover:text-primary transition-colors">Nosotros</a>
             <a href="#servicios" className="hover:text-primary transition-colors">Servicios</a>
@@ -60,7 +71,6 @@ function Index() {
             <a href="#contacto" className="hover:text-primary transition-colors">Contacto</a>
           </nav>
 
-          {/* Botón WhatsApp Estético */}
           <div className="flex items-center flex-1 justify-end">
             <Button asChild className="rounded-full bg-[#1e2d6b] hover:bg-[#2a3e8e] text-white px-8 py-6 h-auto shadow-lg transition-all font-bold text-lg">
               <a href={`https://wa.me/${WHATSAPP}`} target="_blank" rel="noreferrer" className="flex items-center gap-2">
@@ -72,7 +82,7 @@ function Index() {
         </div>
       </header>
 
-      {/* Hero Section */}
+      {/* Hero: Texto simplificado y gráfico restituido */}
       <section id="top" className="relative bg-gradient-to-b from-[#f8f9ff] to-white py-24">
         <div className="mx-auto grid max-w-6xl items-center gap-16 px-6 md:grid-cols-2">
           <div>
@@ -81,51 +91,56 @@ function Index() {
               <span className="text-primary italic">Salud Mental</span> y Discapacidad
             </h1>
             <p className="mt-8 text-2xl text-slate-500 font-light leading-relaxed">
-              Acompañamiento Terapéutico y Psicoterapia con atención domiciliaria y ambulatoria.
+              atención domiciliaria y ambulatoria.
             </p>
             <div className="mt-12 flex gap-4">
               <Button asChild size="lg" className="rounded-full px-10 py-7 text-xl font-bold shadow-xl">
-                <a href={`https://wa.me/${WHATSAPP}`}>Contactar ahora</a>
+                <a href={`https://wa.me/${WHATSAPP}`} target="_blank" rel="noreferrer">Contactar ahora</a>
               </Button>
             </div>
           </div>
-          <div className="bg-slate-100 rounded-[40px] aspect-square flex items-center justify-center border-2 border-dashed border-slate-200">
-             <Heart className="h-32 w-32 text-primary/20" />
+          <div className="flex justify-center">
+             <HeroSvg />
           </div>
         </div>
       </section>
 
-      {/* Nosotros */}
-      <section id="nosotros" className="py-32 bg-white">
+      {/* Quiénes Somos: Texto corregido a enfoque clínico-comunitario */}
+      <section id="nosotros" className="py-32 bg-white scroll-mt-20">
         <div className="mx-auto max-w-4xl px-6 text-center">
           <h2 className="text-4xl font-bold text-slate-900 mb-8 italic">Quiénes Somos</h2>
           <p className="text-2xl text-slate-600 leading-relaxed font-light">
-            Somos una Asociación Civil constituida en el año 2013. Brindamos atención en salud mental, discapacidad y consumos, ofreciendo prestaciones personalizadas con enfoque clínico-comunitario.
+            Somos una Asociación Civil constituida en el año 2013. Brindamos atención en 
+            salud mental, discapacidad y problemáticas vinculadas a consumos. 
+            Ofrecemos prestaciones personalizadas con enfoque clínico-comunitario.
           </p>
         </div>
       </section>
 
-      {/* Servicios */}
-      <section id="servicios" className="py-32 bg-slate-50">
+      {/* Servicios: Textos exactos solicitados */}
+      <section id="servicios" className="py-32 bg-slate-50 scroll-mt-20">
         <div className="mx-auto max-w-6xl px-6">
-          <h2 className="text-4xl font-bold text-center mb-20 text-slate-900">Nuestros Servicios</h2>
+          <h2 className="text-4xl font-bold text-center mb-20 text-slate-900">Servicios</h2>
           <div className="grid md:grid-cols-3 gap-8">
-            {[
-              { t: "Acompañamiento", d: "AT domiciliario y ambulatorio con seguimiento clínico.", i: <Home /> },
-              { t: "Psicoterapia", d: "Abordajes individuales adaptados a cada necesidad.", i: <Heart /> },
-              { t: "Obras Sociales", d: "Gestión de prestaciones por discapacidad.", i: <CheckCircle2 /> }
-            ].map((s, idx) => (
-              <div key={idx} className="bg-white p-12 rounded-3xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
-                <div className="text-primary mb-6 scale-125">{s.i}</div>
-                <h3 className="text-2xl font-bold mb-4">{s.t}</h3>
-                <p className="text-slate-500 text-lg leading-snug">{s.d}</p>
-              </div>
-            ))}
+            <div className="bg-white p-12 rounded-3xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+              <div className="text-primary mb-6 scale-125"><Home /></div>
+              <h3 className="text-2xl font-bold mb-4">Acompañamiento</h3>
+              <p className="text-slate-500 text-lg leading-snug">AT domiciliario y ambulatorio planificado bajo seguimiento clínico.</p>
+            </div>
+            <div className="bg-white p-12 rounded-3xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+              <div className="text-primary mb-6 scale-125"><Heart /></div>
+              <h3 className="text-2xl font-bold mb-4">Psicoterapia</h3>
+              <p className="text-slate-500 text-lg leading-snug">Abordajes individuales adaptados a las necesidades de cada paciente.</p>
+            </div>
+            <div className="bg-white p-12 rounded-3xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+              <div className="text-primary mb-6 scale-125"><CheckCircle2 /></div>
+              <h3 className="text-2xl font-bold mb-4">Obras Sociales</h3>
+              <p className="text-slate-500 text-lg leading-snug">Gestión de atención mediante prestaciones en discapacidad.</p>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* MODALIDAD (Módulo Completo) */}
       <section id="modalidad" className="py-32 bg-white scroll-mt-20">
         <div className="mx-auto max-w-6xl px-6">
           <div className="grid md:grid-cols-2 gap-16 items-center">
@@ -160,7 +175,6 @@ function Index() {
         </div>
       </section>
 
-      {/* PROCESO (Módulo Completo) */}
       <section id="proceso" className="py-32 bg-[#f8f9ff] scroll-mt-20">
         <div className="mx-auto max-w-6xl px-6 text-center">
           <h2 className="text-4xl font-bold text-slate-900 mb-20">Proceso de Trabajo</h2>
@@ -182,7 +196,6 @@ function Index() {
         </div>
       </section>
 
-      {/* CONTACTO ACTUALIZADO CON MAIL */}
       <section id="contacto" className="py-32 bg-white scroll-mt-20">
         <div className="mx-auto max-w-6xl px-6">
           <div className="grid md:grid-cols-2 gap-20">
@@ -213,7 +226,7 @@ function Index() {
               </div>
             </div>
             <div className="bg-slate-50 p-12 rounded-[40px] border border-slate-200 flex flex-col justify-center">
-              <h3 className="text-2xl font-bold mb-6 text-center italic">Solicitar una Entrevista</h3>
+              <h3 className="text-2xl font-bold mb-6 text-center italic">Solicitá una entrevista</h3>
               <Button asChild className="w-full rounded-full py-8 text-xl font-bold h-auto shadow-lg bg-[#1e2d6b]">
                 <a href={`https://wa.me/${WHATSAPP}`} target="_blank" rel="noreferrer">
                   Enviar Mensaje Directo
@@ -224,7 +237,6 @@ function Index() {
         </div>
       </section>
 
-      {/* Footer Final */}
       <footer className="py-20 bg-slate-900 text-white/50 text-center">
         <div className="mx-auto max-w-6xl px-6">
           <h3 className="text-2xl font-bold text-white mb-4">© 2013 ACAPIA</h3>
