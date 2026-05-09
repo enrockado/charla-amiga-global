@@ -218,4 +218,33 @@ function Index() {
                 <div className="flex items-center gap-6">
                   <MapPin className="text-primary h-8 w-8" />
                   <div>
-                    <p className="text-xs font-bold uppercase text-slate-400 tracking-
+                    <p className="text-xs font-bold uppercase text-slate-400 tracking-widest">Atención</p>
+                    <p className="text-2xl font-semibold text-slate-800">CABA y Gran Buenos Aires</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="bg-slate-50 p-12 rounded-[40px] border border-slate-200 flex flex-col justify-center">
+              <h3 className="text-2xl font-bold mb-6 text-center italic">Solicitá una entrevista</h3>
+              <Button asChild className="w-full rounded-full py-8 text-xl font-bold h-auto shadow-lg bg-[#1e2d6b]">
+                <a href={`https://wa.me/${WHATSAPP}`} target="_blank" rel="noreferrer">
+                  Enviar Mensaje Directo
+                </a>
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer className="py-20 bg-slate-900 text-white/50 text-center">
+        <div className="mx-auto max-w-6xl px-6">
+          <h3 className="text-2xl font-bold text-white mb-4">© 2013 ACAPIA</h3>
+          <p className="uppercase text-[10px] tracking-[0.3em] font-bold mb-8">Salud Mental y Discapacidad</p>
+          <p className="text-sm italic max-w-2xl mx-auto border-t border-white/10 pt-8">
+            Asociación Civil para la Asistencia, Prevención, Investigación y Acompañamiento en Salud Mental.
+          </p>
+        </div>
+      </footer>
+    </div>
+  );
+}
