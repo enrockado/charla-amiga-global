@@ -45,17 +45,17 @@ const HeroSvg = () => (
 function Index() {
   return (
     <div className="min-h-screen bg-white text-foreground scroll-smooth">
-      {/* Header con contraste y elementos centrados simétricamente */}
+      {/* Header con contraste y elementos agrupados hacia el centro */}
       <header className="sticky top-0 z-[100] border-b border-slate-200/60 bg-[#f8f9ff] shadow-sm">
-        <div className="mx-auto grid max-w-full grid-cols-3 items-center px-16 py-4">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-8 py-4">
           
-          {/* Logo: Sin palabras al pie, centrado hacia la izquierda */}
-          <div className="flex justify-start">
+          {/* Logo: Tamaño aumentado un 10% (165px) y sin palabras al pie */}
+          <div className="flex items-center">
             <a href="#top" className="block">
               <img 
                 src={logoImg} 
                 alt="ACAPIA" 
-                className="h-[150px] w-auto object-contain pointer-events-none"
+                className="h-[165px] w-auto object-contain pointer-events-none"
               />
             </a>
           </div>
@@ -69,8 +69,8 @@ function Index() {
             <a href="#contacto" className="hover:text-primary transition-colors tracking-tight">Contacto</a>
           </nav>
 
-          {/* Botón WhatsApp: Centrado hacia la derecha */}
-          <div className="flex justify-end">
+          {/* Botón WhatsApp: Agrupado junto a la navegación */}
+          <div className="flex items-center">
             <Button asChild className="rounded-full text-lg font-bold px-12 py-8 h-auto shadow-md">
               <a href={`https://wa.me/${WHATSAPP}`} target="_blank" rel="noreferrer">
                 WhatsApp
