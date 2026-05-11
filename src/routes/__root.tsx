@@ -72,14 +72,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "ACAPIA - Salud Mental" },
+      { name: "description", content: "Asociación Civil para la Asistencia, Prevención e Investigación de las Adicciones" },
+      { name: "author", content: "ACAPIA" },
+      { property: "og:title", content: "ACAPIA" },
+      { property: "og:description", content: "Asociación Civil para la Asistencia, Prevención e Investigación de las Adicciones" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
     ],
     links: [
       {
@@ -96,7 +95,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="es">
       <head>
         <HeadContent />
       </head>
@@ -113,7 +112,10 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <Outlet />
-    </QueryClientProvider>
-  );
-}
+      <div className="flex min-h-screen flex-col">
+        <main className="flex-1">
+          <Outlet />
+        </main>
+        
+        <footer className="w-full py-10 border-t border-border bg-background">
+          <div className="container mx-
