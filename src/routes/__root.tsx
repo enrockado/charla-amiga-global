@@ -75,27 +75,24 @@ function RootComponent() {
           <Outlet />
         </div>
         
-        {/* FOOTER OSCURO UNIFICADO */}
         <footer style={{ 
           width: '100%', 
           padding: '40px 20px', 
+          borderTop: '1px solid #eaeaea', 
           textAlign: 'center',
-          backgroundColor: '#1A1F2C', 
-          color: '#ffffff',
+          backgroundColor: '#ffffff',
           marginTop: 'auto'
         }}>
           <div style={{ maxWidth: '800px', margin: '0 auto', fontFamily: 'sans-serif' }}>
-            <p style={{ fontWeight: 'bold', fontSize: '1.2rem', margin: '0 0 5px 0' }}>
+            <p style={{ fontWeight: 'bold', margin: '0 0 5px 0', color: '#333' }}>
               © 2013 ACAPIA | Salud Mental y Discapacidad
             </p>
-            <p style={{ margin: '0 0 15px 0', opacity: 0.8, fontSize: '14px' }}>
+            <p style={{ margin: '0 0 15px 0', color: '#666', fontSize: '14px', lineHeight: '1.4' }}>
               Asociación Civil para la Asistencia, Prevención, Investigación y Acompañamiento en Salud Mental.
             </p>
-            <div style={{ borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '15px' }}>
-              <p style={{ fontSize: '11px', opacity: 0.6, margin: 0 }}>
-                Personería Jurídica otorgada por Res. IGJ N° 1576 — CUIT 33-71464384-9
-              </p>
-            </div>
+            <p style={{ fontStyle: 'italic', fontSize: '11px', color: '#999', margin: 0 }}>
+              Personería Jurídica otorgada por Res. IGJ N° 1576. CUIT 33-71464384-9.
+            </p>
           </div>
         </footer>
       </div>
