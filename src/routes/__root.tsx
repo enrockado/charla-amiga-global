@@ -75,27 +75,29 @@ function RootComponent() {
           <Outlet />
         </div>
         
+        {/* FOOTER UNIFICADO EN FRANJA OSCURA */}
         <footer style={{ 
           width: '100%', 
-          padding: '40px 20px', 
-          borderTop: '1px solid #eaeaea', 
+          padding: '50px 20px', 
           textAlign: 'center',
-          backgroundColor: '#ffffff',
+          backgroundColor: '#1A1F2C', // Color oscuro institucional
+          color: '#ffffff',
           marginTop: 'auto'
         }}>
           <div style={{ maxWidth: '800px', margin: '0 auto', fontFamily: 'sans-serif' }}>
-            <p style={{ fontWeight: 'bold', margin: '0 0 5px 0', color: '#333' }}>
-              © 2013 ACAPIA | Salud Mental y Discapacidad
-            </p>
-            <p style={{ margin: '0 0 15px 0', color: '#666', fontSize: '14px', lineHeight: '1.4' }}>
-              Asociación Civil para la Asistencia, Prevención, Investigación y Acompañamiento en Salud Mental.
-            </p>
-            <p style={{ fontStyle: 'italic', fontSize: '11px', color: '#999', margin: 0 }}>
-              Personería Jurídica otorgada por Res. IGJ N° 1576. CUIT 33-71464384-9.
-            </p>
-          </div>
-        </footer>
-      </div>
-    </QueryClientProvider>
-  );
-}
+            <div style={{ marginBottom: '25px' }}>
+              <p style={{ fontWeight: 'bold', fontSize: '1.4rem', margin: '0 0 8px 0', letterSpacing: '0.5px' }}>
+                © 2013 ACAPIA
+              </p>
+              <p style={{ fontSize: '1.1rem', margin: '0 0 10px 0', opacity: 0.9 }}>
+                Salud Mental y Discapacidad
+              </p>
+              <p style={{ fontSize: '14px', opacity: 0.7, fontStyle: 'italic', lineHeight: '1.5', maxWidth: '600px', margin: '0 auto' }}>
+                Asociación Civil para la Asistencia, Prevención, Investigación y Acompañamiento en Salud Mental.
+              </p>
+            </div>
+            
+            {/* Divisor y Datos Legales */}
+            <div style={{ borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '20px' }}>
+              <p style={{ fontSize: '12px', opacity: 0.5, margin: 0, letterSpacing: '1px', textTransform: 'uppercase' }}>
+                Personería Jurídica otorgada por Res
